@@ -8,6 +8,7 @@ Also, since I have recently learned React, I will be using what I learned to bui
 
 ## How I built it
 - Gatsby (React + GraphQL)
+- Typography.js
 
 ## Run Project
 1. `gatsby new project-name https://github.com/eureyuri/eureyuri_website_v2`
