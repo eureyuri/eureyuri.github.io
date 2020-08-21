@@ -17,11 +17,12 @@ const typography = new Typography({
   bodyFontFamily: ["Raleway", "serif"],
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
     h1: {
-      fontFamily: ['Avenir Next', 'sans-serif'].join(','),
+      fontFamily: ['Raleway', 'sans-serif'].join(','),
       fontWeight: "100",
     },
     h2: {
-      fontFamily: ['Times', 'sans-serif'].join(','),
+      fontFamily: ['Avenir Next', 'sans-serif'].join(','),
+      fontWeight: "100",
     }
   }),
   googleFonts: [

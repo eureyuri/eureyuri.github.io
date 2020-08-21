@@ -3,11 +3,19 @@
     top: 0;
     width: 100%;
     transition: 0.1s;
+    z-index: 5;
 }
 
 .header__container.scrolled {
     background-color: white;
+    animation-name: header-animate;
+    animation-duration: 1s;
 }
+
+@keyframes header-animate {
+    from {background-color: transparent;}
+    to {background-color: white;}
+  }
 
 header {
     margin-top: 1rem;

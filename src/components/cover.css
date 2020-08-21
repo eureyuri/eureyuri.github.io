@@ -1,0 +1,30 @@
+.cover {
+    height: 100vh;
+    z-index: -1;
+    position: sticky;
+    top: 0;
+}
+
+.cover__left {
+    background-color: rgb(72, 67, 67);
+    width: 50%;
+    position: absolute;
+    left: 0px;
+    height: 100%;
+}
+
+.cover__right {
+    background-color: black;
+    width: 50%;
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cover__text {
+    margin-left: 2.2rem;
+}
