@@ -5,29 +5,32 @@ import "./tools.css";
 
 
 export default function Tools() {
-    return (
-        <div className="tooltips">
+    const LanguageTooltip = (props) => {
+        return (
             <Tooltip
                 title={
                     <React.Fragment>
-                        <div>Flask</div>
-                        <div>Jinja2</div>
+                        {
+                            props.frameworks.map(framework => (
+                                <div>{framework}</div>
+                            ))
+                        }
                     </React.Fragment>
                 }
                 maxWidth={"none"}
                 backgroundColor={'white'}
-                arrow interactive TransitionComponent={Zoom}>
-                <Button className="tooltip__button">Python</Button>
+                arrow TransitionComponent={Zoom}>
+                <Button className="tooltip__button">{props.language}</Button>
             </Tooltip>
-            <Tooltip title="Add" arrow interactive TransitionComponent={Zoom}>
-                <Button className="tooltip__button">JavaScript</Button>
-            </Tooltip>
-            <Tooltip title="Add" arrow interactive TransitionComponent={Zoom}>
-                <Button className="tooltip__button">Java</Button>
-            </Tooltip>
-            <Tooltip title="Add" arrow interactive TransitionComponent={Zoom}>
-                <Button className="tooltip__button">PostgreSQL</Button>
-            </Tooltip>
+        )
+    }
+
+    return (
+        <div className="tooltips">
+            <LanguageTooltip language="Python" frameworks={["Flask", "Jinja2"]} />
+            <LanguageTooltip language="JavaScript" frameworks={["React", "Gatsby", "GraphQL"]} />
+            <Button className="tooltip__button">Java</Button>
+            <Button className="tooltip__button">PostgreSQL</Button>
             <Tooltip title="Add" arrow interactive TransitionComponent={Zoom}>
                 <Button className="tooltip__button">HTML5</Button>
             </Tooltip>
