@@ -9,6 +9,36 @@ svg {
     height: 100px;
 }
 
+.index__container {
+    display: flex;
+    width: 100%;
+}
+
+.index__text {
+    color: black;
+}
+
+.highlight {
+    color: #0075FF;
+}
+
+.index__left {
+    background-color: rgb(72, 67, 67);
+    width: 50%;
+    left: 0px;
+}
+
+.index__right {
+    width: 50%;
+    right: 0px;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 5rem;
+}
+
 @media (max-width: 699px) {
     .svg--lg {
         display: none;
