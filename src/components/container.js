@@ -1,6 +1,12 @@
-import React from "react"
-import containerStyles from "./container.module.css"
+import React from "react";
+import "./container.css";
 
-export default function Container({ children }) {
-  return <div className={containerStyles.container}>{children}</div>
+export default function Container({ header, children }) {
+  return (
+    <div className="container">
+      <h1 className="container__header">{header}</h1>
+      <hr></hr>
+      {children}
+    </div>
+  )
 }
