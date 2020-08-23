@@ -7,7 +7,7 @@
     text-transform: none !important;
     margin-right: 1rem !important;
     margin-bottom: 0.3rem !important;
-    border-radius: 20px 20px 20px 20px !important;
+    border-radius: 20px 20px 20px 20px;
     min-width: max-content !important;
 }
 
