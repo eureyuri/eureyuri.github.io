@@ -1,5 +1,6 @@
 import React from 'react'
 import "./cover.css";
+import SNSButtons from "./SNSButtons";
 
 export default function cover() {
     return (
@@ -8,7 +9,8 @@ export default function cover() {
             <div className="cover__right">
                 <div className="cover__text">
                     <h1>Eurey Noguchi</h1>
-                    <h2>Designing Innovation</h2>
+                    <h2>Designing <span className="cover__emphasis">Innovation</span></h2>
+                    <SNSButtons />
                 </div>
             </div>
         </div>

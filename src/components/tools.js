@@ -25,21 +25,28 @@ export default function Tools() {
         )
     }
 
+    const LanguageButton = ({language}) => (
+        <Button
+            className="tooltip__button"
+            style={{ pointerEvents: "none" }}>
+                {language}
+        </Button>
+    );
+
     return (
         <div className="tooltips">
-            <LanguageTooltip language="Python" frameworks={["Flask", "Jinja2"]} />
-            <LanguageTooltip language="JavaScript" frameworks={["React", "Gatsby", "GraphQL"]} />
-            <Button className="tooltip__button">Java</Button>
-            <Button className="tooltip__button">PostgreSQL</Button>
-            <Tooltip title="Add" arrow interactive TransitionComponent={Zoom}>
-                <Button className="tooltip__button">HTML5</Button>
-            </Tooltip>
-            <Tooltip title="Add" arrow interactive TransitionComponent={Zoom}>
-                <Button className="tooltip__button">CSS3</Button>
-            </Tooltip>
-            <Tooltip title="Add" arrow interactive TransitionComponent={Zoom}>
-                <Button className="tooltip__button">Firebase</Button>
-            </Tooltip>
+            <LanguageTooltip
+                language="Python"
+                frameworks={["Flask", "Keras", "Requests", "OpenCV", "Pandas", "Matplotlib", "Numpy", "and more..."]} />
+            <LanguageTooltip
+                language="JavaScript"
+                frameworks={["React", "Redux", "Gatsby", "Node", "Express"]} />
+            <LanguageButton language="Java" />
+            <LanguageButton language="GraphQL" />
+            <LanguageButton language="PostgreSQL" />
+            <LanguageButton language="HTML5" />
+            <LanguageButton language="CSS3" />
+            <LanguageButton language="Firebase" />
         </div>
     )
 }

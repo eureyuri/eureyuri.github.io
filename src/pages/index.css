@@ -2,7 +2,7 @@ h1 {
     color: white;
 }
 
-svg {
+.home__svg {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -37,6 +37,48 @@ svg {
     flex-direction: column;
     justify-content: center;
     padding-right: 5rem;
+}
+
+.index__buttons {
+    margin-top: 1rem;
+}
+
+.resume_button {
+    background-color: #4198FF;
+    color: white;
+    transition: 0.4s;
+    border-radius: 5px 5px 5px 5px !important;
+}
+
+.resume_button:hover {
+    background-color: #377fd7;
+    color: white;
+}
+
+.more_button {
+    border-color: #4198FF;
+    transition: 0.4s;
+    border-radius: 5px 5px 5px 5px !important;
+}
+
+.more_button:hover {
+    background-color: #4198FF;
+    color: white;
+}
+
+.contact__email {
+    color: #0075FF;
+}
+
+.contact__email:hover {
+    color: #0162d2;
+    cursor: pointer;
+}
+
+.copyright {
+    margin-bottom: 1rem;
+    position: relative;
+    text-align: center;
 }
 
 @media (max-width: 699px) {

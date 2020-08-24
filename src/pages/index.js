@@ -5,18 +5,32 @@ import Header from "../components/header";
 import Cover from "../components/cover";
 import Container from "../components/container";
 import Tools from "../components/tools";
+import Button from "@material-ui/core/Button";
+import SNSButtons from "../components/SNSButtons";
 
 export default function Home() {
+  const buttonStyle = {
+    position:"fixed",
+    bottom: "0",
+    zIndex: 5,
+    right: "0",
+    paddingRight: "0.8rem",
+    paddingBottom: "1rem",
+    color: "#0075FF"
+  }
+
   return (
     <div>
       <Header />
       <Cover />
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <svg className="home__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
         <polygon class="svg--sm" fill="white" points="0,0 30,100 65,21 90,100 100,75 100,100 0,100"/>
         <polygon class="svg--lg" fill="white" points="0,65 10,100 15,100 35,40 72,100 85,100 100,35 100,100 0,100" />
       </svg>
 
-      <div style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center"}}>
+      <SNSButtons buttonStyle={buttonStyle}/>
+
+      <div style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
         <Container header="About Me">
           <div className="index__container">
             <div className="index__left">Image will go here</div>
@@ -33,21 +47,38 @@ export default function Home() {
 
               <Tools />
 
+              <div className="index__buttons">
+                <Button
+                  className="resume_button"
+                  variant="contained"
+                  disableElevation
+                  onClick={() => { alert('clicked') }}>Resume</Button>
+                <Button
+                  className="more_button"
+                  variant="outlined"
+                  disableElevation
+                  onClick={() => { alert('clicked') }}>More About Me</Button>
+              </div>
+
             </div>
           </div>
         </Container>
       </div>
 
-      <div style={{background: "#F8F8F8", display: "flex", flexDirection:"column", justifyContent: "center"}}>
+      <div style={{background: "#F8F8F8", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
         <Container header="Projects">
           Some Content
         </Container>
       </div>
 
-      <div style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center"}}>
+      <div style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
         <Container header="Contact">
-          Contact Me
+          <p>Contact me for inquiries, personal websites, illustrations, designs, or for anything!</p>
+          <a href="mailto: eureynoguchi@gmail.com" target="_blank">
+            <p className="contact__email">eureynoguchi@gmail.com</p>
+          </a>
         </Container>
+        <p className="copyright">&copy; Eurey Noguchi 2020</p>
       </div>
 
     </div>

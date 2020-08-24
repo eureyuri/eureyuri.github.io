@@ -1,6 +1,5 @@
 .cover {
     height: 100vh;
-    z-index: -1;
     position: sticky;
     top: 0;
 }
@@ -27,4 +26,11 @@
 
 .cover__text {
     margin-left: 2.2rem;
+}
+
+.cover__emphasis {
+    background: -webkit-linear-gradient(rgb(255, 219, 174), #FF9900);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* font-weight: 300; */
 }
