@@ -66,6 +66,21 @@ h1 {
     color: white;
 }
 
+.contact__email {
+    color: #0075FF;
+}
+
+.contact__email:hover {
+    color: #0162d2;
+    cursor: pointer;
+}
+
+.copyright {
+    margin-bottom: 1rem;
+    position: relative;
+    text-align: center;
+}
+
 @media (max-width: 699px) {
     .svg--lg {
         display: none;

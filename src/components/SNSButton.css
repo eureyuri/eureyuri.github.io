@@ -3,6 +3,22 @@
     font-size: 1.8rem;
 }
 
+.snsbuttons__container.fadeOut {
+    transition-duration: 300ms;
+    transition-property: opacity;
+    opacity: 0;
+    transform: translateX(1rem);
+    transition: all .6s;
+}
+
+.snsbuttons__container.fadeIn {
+    transition-duration: 300ms;
+    transition-property: opacity;
+    opacity: 1 !important;
+    transform: translateX(-1rem);
+    transition: all .6s;
+}
+
 .icon__github, .icon__linkedin, .icon__youtube {
     margin-right: 1rem;
 }
