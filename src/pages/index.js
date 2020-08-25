@@ -24,13 +24,13 @@ export default function Home() {
       <Header />
       <Cover />
       <svg className="home__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon class="svg--sm" fill="white" points="0,0 30,100 65,21 90,100 100,75 100,100 0,100"/>
-        <polygon class="svg--lg" fill="white" points="0,65 10,100 15,100 35,40 72,100 85,100 100,35 100,100 0,100" />
+        <polygon className="svg--sm" fill="white" points="0,0 30,100 65,21 90,100 100,75 100,100 0,100"/>
+        <polygon className="svg--lg" fill="white" points="0,65 10,100 15,100 35,40 72,100 85,100 100,35 100,100 0,100" />
       </svg>
 
       <SNSButtons buttonStyle={buttonStyle}/>
 
-      <div style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
+      <div id="about" style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
         <Container header="About Me">
           <div className="index__container">
             <div className="index__left">Image will go here</div>
@@ -65,16 +65,16 @@ export default function Home() {
         </Container>
       </div>
 
-      <div style={{background: "#F8F8F8", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
+      <div id="projects" style={{background: "#F8F8F8", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
         <Container header="Projects">
           Some Content
         </Container>
       </div>
 
-      <div style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
+      <div id="contact" style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
         <Container header="Contact">
           <p>Contact me for inquiries, personal websites, illustrations, designs, or for anything!</p>
-          <a href="mailto: eureynoguchi@gmail.com" target="_blank">
+          <a href="mailto: eureynoguchi@gmail.com" target="_blank" rel="noreferrer nofollow">
             <p className="contact__email">eureynoguchi@gmail.com</p>
           </a>
         </Container>
