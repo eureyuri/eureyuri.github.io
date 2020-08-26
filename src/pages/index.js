@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "gatsby";
 import "./index.css";
 import Header from "../components/header";
@@ -7,8 +7,23 @@ import Container from "../components/container";
 import Tools from "../components/tools";
 import Button from "@material-ui/core/Button";
 import SNSButtons from "../components/SNSButtons";
+import ContainedTabs from "../components/ContainedTabs";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 
 export default function Home() {
+  const materialFontTheme = createMuiTheme({
+    typography: {
+      fontFamily: [
+        "Raleway",
+        "Avenir Next",
+        "Helvetica Neue",
+        "Segoe UI",
+        "Helvetica",
+        "Arial",
+        "sans-serif",
+      ].join(",")
+    }
+  });
   const buttonStyle = {
     position:"fixed",
     bottom: "0",
@@ -18,6 +33,7 @@ export default function Home() {
     paddingBottom: "1rem",
     color: "#0075FF"
   }
+  const [tabIndex, setTabIndex] = useState(0);
 
   return (
     <div>
@@ -67,7 +83,20 @@ export default function Home() {
 
       <div id="projects" style={{background: "#F8F8F8", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
         <Container header="Projects">
-          Some Content
+          <ThemeProvider theme={materialFontTheme}>
+            <ContainedTabs
+              tabs={[
+                { label: "All" },
+                { label: "Web" },
+                { label: "Mobile" },
+                { label: "CLI" }
+              ]}
+              value={tabIndex}
+              onChange={(e, i) => setTabIndex(i)}
+            />
+          </ThemeProvider>
+
+
         </Container>
       </div>
 
