@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Color from "color";
 import { makeStyles } from "@material-ui/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -69,15 +68,47 @@ const useTabStyles = makeStyles(({ palette, spacing, breakpoints }) => {
   };
 });
 
+function TabPanel({ children, value, index, ...other }) {
+  // console.clear();
+  // console.log(children.children);
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <div>
+          {children}
+        </div>
+      )}
+    </div>
+  );
+}
+
 const ContainedTabs = ({ tabs, tabStyle, tabProps, ...props }) => {
   const tabsClasses = useTabsStyles(props);
   const tabClasses = useTabStyles({ ...tabProps, ...tabStyle });
+
   return (
-    <Tabs {...props} classes={tabsClasses}>
-      {tabs.map((tab) => (
-        <Tab key={tab.label} {...tabProps} {...tab} classes={tabClasses} />
-      ))}
-    </Tabs>
+    <div style={{width: "100%", display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center"}}>
+      <Tabs {...props} classes={tabsClasses}>
+        {tabs.map((tab) => (
+          <Tab key={tab.label} {...tabProps} {...tab} classes={tabClasses} />
+        ))}
+      </Tabs>
+
+      <TabPanel value={props.value} index={0}>
+        Item One and another
+      </TabPanel>
+      <TabPanel value={props.value} index={1}>Item Two</TabPanel>
+      <TabPanel value={props.value} index={2}>Item Three</TabPanel>
+      <TabPanel value={props.value} index={3}>Item Three</TabPanel>
+    </div>
+
   );
 };
 
