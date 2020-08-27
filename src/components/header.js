@@ -1,7 +1,14 @@
 import React, { useEffect } from "react";
 import { Link } from "gatsby";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 import "./header.css";
+
+const AnchorListLink = ({link, title}) => (
+  <li className="header__links">
+    <AnchorLink to={`/#${link}`} title={title} />
+  </li>
+)
 
 const ListLink = props => (
   <li className="header__links">
@@ -38,18 +45,18 @@ export default function Header({ headerText }) {
   return (
     <div className="header__container">
       <header>
-        <Link to="/" className="header__logo">
+        <AnchorLink to="/" title="EN" className="header__logo">
           EN
-        </Link>
+        </AnchorLink>
         <ul className="header__nav">
-          <ListLink to="/">About</ListLink>
-          <ListLink to="/more/">Projects</ListLink>
-          <ListLink to="/about-css-modules/">Contact</ListLink>
+          <AnchorListLink link="about" title="About" />
+          <AnchorListLink link="projects" title="Projects" />
+          <AnchorListLink link="contact" title="Contact" />
           <ListLink to="/about-css-modules/">
-            <div class="hamburger">
-              <span class="hamburger_line hamburger_line1"></span>
-              <span class="hamburger_line hamburger_line2"></span>
-              <span class="hamburger_line hamburger_line3"></span>
+            <div className="hamburger">
+              <span className="hamburger_line hamburger_line1"></span>
+              <span className="hamburger_line hamburger_line2"></span>
+              <span className="hamburger_line hamburger_line3"></span>
             </div>
           </ListLink>
         </ul>

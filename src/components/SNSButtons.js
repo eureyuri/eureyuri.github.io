@@ -35,13 +35,13 @@ export default function SNSButtons({buttonStyle}) {
         <div className="snsbuttons__container" style={buttonStyle}>
             {/* <!-- Icon list: https://fontawesome.com/icons -->
             <!-- Brand colours: https://brandcolors.net/ --> */}
-            <a href="https://github.com/eureyuri" target="_blank">
+            <a href="https://github.com/eureyuri" target="_blank" rel="noreferrer nofollow">
                 <FontAwesomeIcon className="icon__github" icon={['fab', 'github']} />
             </a>
-            <a href="https://www.linkedin.com/in/eurey-noguchi/" target="_blank">
+            <a href="https://www.linkedin.com/in/eurey-noguchi/" target="_blank" rel="noreferrer nofollow">
                 <FontAwesomeIcon className="icon__linkedin" icon={['fab', 'linkedin']} />
             </a>
-            <a href="https://www.youtube.com/channel/UCOScmlJ9J2xpLwuOYQu4n9Q" target="_blank">
+            <a href="https://www.youtube.com/channel/UCOScmlJ9J2xpLwuOYQu4n9Q" target="_blank" rel="nofollow">
                 <FontAwesomeIcon className="icon__youtube" icon={['fab', 'youtube']} />
             </a>
         </div>

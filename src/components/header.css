@@ -57,6 +57,11 @@ header.scrolled {
     text-decoration: none;
     font-size: 0.9rem;
     margin-bottom: 0;
+    transition: 0.3s;
+}
+
+.header__links:hover, .header__links:focus {
+    color: #FF9900;
 }
 
 .hamburger {

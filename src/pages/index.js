@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "gatsby";
 import "./index.css";
 import Header from "../components/header";
@@ -7,8 +7,23 @@ import Container from "../components/container";
 import Tools from "../components/tools";
 import Button from "@material-ui/core/Button";
 import SNSButtons from "../components/SNSButtons";
+import ContainedTabs from "../components/ContainedTabs";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 
 export default function Home() {
+  const materialFontTheme = createMuiTheme({
+    typography: {
+      fontFamily: [
+        "Raleway",
+        "Avenir Next",
+        "Helvetica Neue",
+        "Segoe UI",
+        "Helvetica",
+        "Arial",
+        "sans-serif",
+      ].join(",")
+    }
+  });
   const buttonStyle = {
     position:"fixed",
     bottom: "0",
@@ -18,19 +33,20 @@ export default function Home() {
     paddingBottom: "1rem",
     color: "#0075FF"
   }
+  const [tabIndex, setTabIndex] = useState(0);
 
   return (
     <div>
       <Header />
       <Cover />
       <svg className="home__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon class="svg--sm" fill="white" points="0,0 30,100 65,21 90,100 100,75 100,100 0,100"/>
-        <polygon class="svg--lg" fill="white" points="0,65 10,100 15,100 35,40 72,100 85,100 100,35 100,100 0,100" />
+        <polygon className="svg--sm" fill="white" points="0,0 30,100 65,21 90,100 100,75 100,100 0,100"/>
+        <polygon className="svg--lg" fill="white" points="0,65 10,100 15,100 35,40 72,100 85,100 100,35 100,100 0,100" />
       </svg>
 
       <SNSButtons buttonStyle={buttonStyle}/>
 
-      <div style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
+      <div id="about" style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
         <Container header="About Me">
           <div className="index__container">
             <div className="index__left">Image will go here</div>
@@ -65,16 +81,29 @@ export default function Home() {
         </Container>
       </div>
 
-      <div style={{background: "#F8F8F8", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
+      <div id="projects" style={{background: "#F8F8F8", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
         <Container header="Projects">
-          Some Content
+          <ThemeProvider theme={materialFontTheme}>
+            <ContainedTabs
+              tabs={[
+                { label: "All" },
+                { label: "Web" },
+                { label: "Mobile" },
+                { label: "CLI" }
+              ]}
+              value={tabIndex}
+              onChange={(e, i) => setTabIndex(i)}
+            />
+          </ThemeProvider>
+
+
         </Container>
       </div>
 
-      <div style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
+      <div id="contact" style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
         <Container header="Contact">
           <p>Contact me for inquiries, personal websites, illustrations, designs, or for anything!</p>
-          <a href="mailto: eureynoguchi@gmail.com" target="_blank">
+          <a href="mailto: eureynoguchi@gmail.com" target="_blank" rel="noreferrer nofollow">
             <p className="contact__email">eureynoguchi@gmail.com</p>
           </a>
         </Container>
