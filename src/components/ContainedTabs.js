@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import ProjectCard from "./ProjectCard";
 
 const useTabsStyles = makeStyles(() => ({
     root: {
@@ -81,7 +82,7 @@ function TabPanel({ children, value, index, ...other }) {
       {...other}
     >
       {value === index && (
-        <div>
+        <div style={{display: "flex", flexWrap: "wrap"}}>
           {children}
         </div>
       )}
@@ -102,9 +103,29 @@ const ContainedTabs = ({ tabs, tabStyle, tabProps, ...props }) => {
       </Tabs>
 
       <TabPanel value={props.value} index={0}>
-        Item One and another
+        <ProjectCard
+          image="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
+          heading="Dolly"
+          body="Transcribe meeting logs"
+          github="https://github.com/eureyuri/dolly"
+          demo="https://github.com/eureyuri/dolly" />
+        <ProjectCard
+          image="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
+          heading="Dolly"
+          body="Transcribe meeting logs" />
+        <ProjectCard
+          image="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
+          heading="Dolly"
+          body="Transcribe meeting logs" />
       </TabPanel>
-      <TabPanel value={props.value} index={1}>Item Two</TabPanel>
+      <TabPanel value={props.value} index={1}>
+        <ProjectCard
+            image="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
+            heading="Dolly"
+            body="Transcribe meeting logs"
+            github="https://github.com/eureyuri/dolly"
+            demo="https://github.com/eureyuri/dolly" />
+      </TabPanel>
       <TabPanel value={props.value} index={2}>Item Three</TabPanel>
       <TabPanel value={props.value} index={3}>Item Three</TabPanel>
     </div>
