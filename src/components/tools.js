@@ -47,6 +47,18 @@ export default function Tools() {
             <LanguageButton language="HTML5" />
             <LanguageButton language="CSS3" />
             <LanguageButton language="Firebase" />
+            <LanguageTooltip
+                language="Japanese"
+                frameworks={["Native"]} />
+            <LanguageTooltip
+                language="English"
+                frameworks={["Native"]} />
+            <LanguageTooltip
+                language="Spanish"
+                frameworks={["Intermediate"]} />
+            <LanguageTooltip
+                language="Chinese"
+                frameworks={["Beginner"]} />
         </div>
     )
 }

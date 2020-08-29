@@ -1,6 +1,7 @@
 import React from 'react'
 import "./cover.css";
 import SNSButtons from "./SNSButtons";
+import Typist from 'react-typist';
 
 export default function cover() {
     return (
@@ -9,7 +10,19 @@ export default function cover() {
             <div className="cover__right">
                 <div className="cover__text">
                     <h1>Eurey Noguchi</h1>
-                    <h2>Designing <span className="cover__emphasis">Innovation</span></h2>
+                    <h2>
+                        <Typist cursor={{hideWhenDone: true}}>
+                            Designing <span className="cover__emphasis">Innovation</span>
+                            <Typist.Backspace count={20} delay={500}/>
+                            I am a {["Web Developer", "Digital Artist", "Designer"]
+                                .map(word => ([
+                                    <span className="cover__emphasis">{word}</span>,
+                                    <Typist.Backspace count={word.length} delay={500}/>
+                                ]))}
+                            <Typist.Backspace count={7} />
+                            Designing <span className="cover__emphasis">Innovation</span>
+                        </Typist>
+                    </h2>
                     <SNSButtons />
                 </div>
             </div>

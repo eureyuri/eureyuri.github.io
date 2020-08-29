@@ -29,6 +29,10 @@ export default function SNSButtons({buttonStyle}) {
 
     useEffect(() => {
         window.addEventListener("scroll", handleButtonOnScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleButtonOnScroll);
+        }
       }, []);
 
     return (

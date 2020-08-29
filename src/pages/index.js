@@ -69,11 +69,12 @@ export default function Home() {
                   variant="contained"
                   disableElevation
                   onClick={() => { alert('clicked') }}>Resume</Button>
-                <Button
-                  className="more_button"
-                  variant="outlined"
-                  disableElevation
-                  onClick={() => { alert('clicked') }}>More About Me</Button>
+                <Link to="/more/">
+                  <Button
+                    className="more_button"
+                    variant="outlined"
+                    disableElevation>More About Me</Button>
+                </Link>
               </div>
 
             </div>
