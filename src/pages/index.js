@@ -9,8 +9,10 @@ import Button from "@material-ui/core/Button";
 import SNSButtons from "../components/SNSButtons";
 import ContainedTabs from "../components/ContainedTabs";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import { graphql } from "gatsby";
+import Img from "gatsby-image";
 
-export default function Home() {
+export default function Home({ data }) {
   const materialFontTheme = createMuiTheme({
     typography: {
       fontFamily: [
@@ -38,7 +40,7 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <Cover />
+      <Cover coverImage={data.coverImage.childImageSharp.fluid} />
       <svg className="home__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
         <polygon className="svg--sm" fill="white" points="0,0 30,100 65,21 90,100 100,75 100,100 0,100"/>
         <polygon className="svg--lg" fill="white" points="0,65 10,100 15,100 35,40 72,100 85,100 100,35 100,100 0,100" />
@@ -46,10 +48,14 @@ export default function Home() {
 
       <SNSButtons buttonStyle={buttonStyle}/>
 
-      <div id="about" style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
+      <div id="about" style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", marginTop: "-0.5rem"}}>
         <Container header="About Me">
           <div className="index__container">
-            <div className="index__left">Image will go here</div>
+            <div className="index__left">
+              <Img
+                fluid={data.aboutImage.childImageSharp.fluid}
+              />
+            </div>
             <div className="index__right">
               <p className="index__text">
                 I am a senior at Columbia University majoring in Computer Engineering seeking opportunities to work in the U.S.
@@ -68,12 +74,13 @@ export default function Home() {
                   className="resume_button"
                   variant="contained"
                   disableElevation
-                  onClick={() => { alert('clicked') }}>Resume</Button>
-                <Button
-                  className="more_button"
-                  variant="outlined"
-                  disableElevation
-                  onClick={() => { alert('clicked') }}>More About Me</Button>
+                  onClick={() => { window.open("https://drive.google.com/file/d/1MApQ9pWocj6k5_2tNM3QoAqmVE220OFC/view", '_blank') }}>Resume</Button>
+                <Link to="/more/">
+                  <Button
+                    className="more_button"
+                    variant="outlined"
+                    disableElevation>More About Me</Button>
+                </Link>
               </div>
 
             </div>
@@ -89,7 +96,8 @@ export default function Home() {
                 { label: "All" },
                 { label: "Web" },
                 { label: "Mobile" },
-                { label: "CLI" }
+                { label: "CLI" },
+                { label: "Design"}
               ]}
               value={tabIndex}
               onChange={(e, i) => setTabIndex(i)}
@@ -112,4 +120,25 @@ export default function Home() {
 
     </div>
   )
-}
+};
+
+export const query = graphql`
+  query {
+    coverImage: file(relativePath: { eq: "cover.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluidLimitPresentationSize
+        }
+      }
+    }
+    aboutImage: file(relativePath: { eq: "eurey_nobg.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluidLimitPresentationSize
+        }
+      }
+    }
+  }
+`;

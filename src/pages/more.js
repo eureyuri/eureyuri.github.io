@@ -1,8 +1,8 @@
 import React from "react"
-import styles from "./about-css-modules.module.css"
+import styles from "./more.module.css"
 import Layout from "../components/layout"
 
-export default function About() {
+export default function More() {
     const User = props => (
         <div className={styles.user}>
             <img src={props.avatar} className={styles.avatar} alt="" />
