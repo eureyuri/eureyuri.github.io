@@ -2,10 +2,11 @@
     height: 100vh;
     position: sticky;
     top: 0;
+    background-color: white;
 }
 
 .cover__left {
-    background-color: rgb(72, 67, 67);
+    /* background-color: black; */
     width: 50%;
     position: absolute;
     left: 0px;

@@ -3,7 +3,7 @@ h1 {
 }
 
 .home__svg {
-    position: absolute;
+    position: sticky;
     bottom: 0;
     width: 100%;
     height: 100px;
@@ -23,7 +23,6 @@ h1 {
 }
 
 .index__left {
-    background-color: rgb(72, 67, 67);
     width: 50%;
     left: 0px;
 }
