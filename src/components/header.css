@@ -63,36 +63,3 @@ header.scrolled {
 .header__links:hover, .header__links:focus {
     color: #FF9900;
 }
-
-.hamburger {
-    position: fixed;
-    cursor: pointer;
-    z-index: 300;
-    transform-origin: center;
-}
-
-.hamburger_line {
-    position: absolute;
-    left: 11px;
-    width: 25px;
-    height: 2px;
-    background-color: white;
-    transition: all .6s;
-    display: flex;
-}
-
-.hamburger_line.scrolled {
-    background-color: #111;
-}
-
-.hamburger_line1 {
-    top: -7px;
-}
-
-.hamburger_line2 {
-    top: 0px;
-}
-
-.hamburger_line3 {
-    top: 7px;
-}

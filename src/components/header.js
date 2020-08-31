@@ -1,8 +1,18 @@
 import React, { useEffect } from "react";
 import { Link } from "gatsby";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
-
 import "./header.css";
+import { useState } from "react";
+import { makeStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Drawer from '@material-ui/core/Drawer';
+import clsx from 'clsx';
+import IconButton from '@material-ui/core/IconButton';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import MenuIcon from '@material-ui/icons/Menu';
+
 
 const AnchorListLink = ({link, title}) => (
   <li className="header__links">
@@ -16,7 +26,64 @@ const ListLink = props => (
   </li>
 )
 
+const useStyles = makeStyles({
+  list: {
+    width: "300px",
+    display: "flex",
+    justifyContent: "center"
+  },
+  MuiDrawerPaper: {
+    backgroundColor: "rgba(255, 255, 255, 0.8)",
+  },
+  drawerHeader: {
+    marginTop: "1rem",
+    display: "flex",
+    justifyContent: "flex-start",
+  },
+  drawerButton: {
+    '&:hover': {
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+    },
+  },
+  drawerContent: {
+    textAlign: "center",
+    marginTop: "15px",
+    marginBottom: "15px",
+    color: "#4198FF"
+  },
+  textList: {
+    width: "100%"
+  },
+  menuButton: {
+    marginLeft: "5px"
+  }
+});
+
 export default function Header({ headerText }) {
+  const classes = useStyles();
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  const toggleDrawer = () => {
+    setOpenDrawer(!openDrawer);
+  }
+
+  const list = () => (
+    <div
+      className={clsx(classes.list)}
+      role="presentation"
+    >
+      <List className={classes.textList}>
+        {['More About Me', 'Interests', 'Blog', 'Resume'].map((text, index) => (
+          <Link to={"/more/"}>
+            <ListItem button key={text} className={classes.drawerButton}>
+              <ListItemText primary={text} className={classes.drawerContent}/>
+            </ListItem>
+          </Link>
+        ))}
+      </List>
+    </div>
+  )
+
   useEffect(() => {
     function resizeHeaderOnScroll() {
       const distanceY = window.pageYOffset || document.documentElement.scrollTop;
@@ -52,13 +119,28 @@ export default function Header({ headerText }) {
           <AnchorListLink link="about" title="About" />
           <AnchorListLink link="projects" title="Projects" />
           <AnchorListLink link="contact" title="Contact" />
-          <ListLink to="/about-css-modules/">
-            <div className="hamburger">
-              <span className="hamburger_line hamburger_line1"></span>
-              <span className="hamburger_line hamburger_line2"></span>
-              <span className="hamburger_line hamburger_line3"></span>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={toggleDrawer}
+            edge="start"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Drawer
+            classes={{ paper: classes.MuiDrawerPaper }}
+            anchor="right"
+            elevation="1000"
+            open={openDrawer}
+            onClose={toggleDrawer}
+          >
+            <div className={classes.drawerHeader}>
+              <IconButton onClick={toggleDrawer} className={classes.menuButton}>
+                <ChevronRightIcon />
+              </IconButton>
             </div>
-          </ListLink>
+            {list()}
+          </Drawer>
         </ul>
       </header>
     </div>
