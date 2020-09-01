@@ -1,14 +1,18 @@
-import React from "react"
-import Container from "../components/container"
-import Header from "./header"
+import React from 'react'
+import SNSButtons from "../components/SNSButtons";
+import Header from "../components/header";
+import { materialFontTheme, buttonStyle } from "../utils/materialTheme";
+
+import { ThemeProvider } from "@material-ui/core";
 
 export default function Layout({ children }) {
-  return (
-    <div>
-        <Header />
-        <Container>
-            {children}
-        </Container>
-    </div>
-  )
+    return (
+        <div>
+            <ThemeProvider theme={materialFontTheme}>
+                <Header />
+            </ThemeProvider>
+            { children }
+            <SNSButtons buttonStyle={buttonStyle}/>
+        </div>
+    )
 }

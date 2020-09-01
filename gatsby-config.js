@@ -1,6 +1,9 @@
 const path = require(`path`)
 
 module.exports = {
+  siteMetadata: {
+    siteTitle: "Eurey Noguchi"
+  },
   plugins: [
     `gatsby-theme-material-ui`,
     `gatsby-plugin-anchor-links`,
