@@ -1,15 +1,14 @@
 import React from "react";
 import Layout from "../components/Layout";
-import Cover from "../components/cover";
+import HalfCover from "../components/halfCover"
 
 export default function More({ data }) {
 
   return (
     <div>
       <Layout>
-        AAA
+        <HalfCover coverImage={data.coverImage.childImageSharp.fluid} />
       </Layout>
-
     </div>
 
   )
@@ -17,15 +16,7 @@ export default function More({ data }) {
 
 export const query = graphql`
   query {
-    coverImage: file(relativePath: { eq: "cover.jpeg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
-          ...GatsbyImageSharpFluidLimitPresentationSize
-        }
-      }
-    }
-    aboutImage: file(relativePath: { eq: "eurey_nobg.png" }) {
+    coverImage: file(relativePath: { eq: "cover2.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 1000) {
           ...GatsbyImageSharpFluid

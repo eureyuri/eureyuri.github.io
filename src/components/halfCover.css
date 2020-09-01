@@ -1,0 +1,6 @@
+.halfcover {
+    height: 70vh;
+    position: sticky;
+    top: 0;
+    background-color: black;
+}
