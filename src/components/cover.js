@@ -35,7 +35,7 @@ export default function cover({ coverImage }) {
                             Designing <span className="cover__emphasis">Innovation</span>
                         </Typist>
                     </h2>
-                    <SNSButtons />
+                    <SNSButtons isCover={true} />
                 </div>
             </div>
         </div>

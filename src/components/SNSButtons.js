@@ -4,7 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import "./SNSButton.css";
 
-export default function SNSButtons({buttonStyle}) {
+export default function SNSButtons({ isCover, buttonStyle }) {
     library.add(fab)
 
     function handleButtonOnScroll() {
@@ -23,17 +23,21 @@ export default function SNSButtons({buttonStyle}) {
     }
 
     useEffect(() => {
-        const buttonsContainer = document.getElementsByClassName("snsbuttons__container")[1];
-        buttonsContainer.style.opacity = 0;
+        if (isCover) {
+            const buttonsContainer = document.getElementsByClassName("snsbuttons__container")[1];
+            buttonsContainer.style.opacity = 0;
+        }
     }, []);
 
     useEffect(() => {
-        window.addEventListener("scroll", handleButtonOnScroll);
+        if (isCover) {
+            window.addEventListener("scroll", handleButtonOnScroll);
 
-        return () => {
-            window.removeEventListener("scroll", handleButtonOnScroll);
+            return () => {
+                window.removeEventListener("scroll", handleButtonOnScroll);
+            }
         }
-      }, []);
+    }, []);
 
     return (
         <div className="snsbuttons__container" style={buttonStyle}>
