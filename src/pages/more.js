@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/Layout";
 import HalfCover from "../components/halfCover";
 import Container from "../components/container";
 
 export default function More({ data }) {
+  const [tab, setTab] = useState("Background");
 
   return (
     <div>
       <Layout>
-        <HalfCover coverImage={data.coverImage.childImageSharp.fluid} />
+        <HalfCover coverImage={data.coverImage.childImageSharp.fluid}
+          setTab={setTab} />
 
         <div id="about" style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", marginTop: "-0.5rem"}}>
-          <Container header="Background">
+          <Container header={tab}>
             <div className="index__container">
               <div className="index__left">
               </div>

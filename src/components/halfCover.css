@@ -29,8 +29,25 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 2rem;
+    cursor: pointer;
 }
 
 .halfcover__text__link {
     width: 10rem;
+    position: relative;
+    display: inline-block;
+    font-weight: 300;
+    color: #0075FF;
+    overflow: hidden;
+    background: linear-gradient(to right, #007bff, #007bff 50%, white 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+}
+
+.halfcover__text__link:hover {
+    background-position: 0 100%;
 }

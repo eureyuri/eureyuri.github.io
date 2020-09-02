@@ -2,8 +2,9 @@ import React from 'react'
 import Img from "gatsby-image"
 
 import "./halfCover.css";
+import { useState } from 'react';
 
-export default function HalfCover({ coverImage }) {
+export default function HalfCover({ coverImage, setTab }) {
     return (
         <div className="halfcover">
             <Img
@@ -22,9 +23,12 @@ export default function HalfCover({ coverImage }) {
                 <h1 className="halfcover__text__title">More About Eurey</h1>
                 <p>Space for showcasing my creative side</p>
                 <div className="halfcover__text__links">
-                    <h3 className="halfcover__text__link">Background</h3>
-                    <h3 className="halfcover__text__link">Interests</h3>
-                    <h3 className="halfcover__text__link">Blog</h3>
+                    <h3 className="halfcover__text__link"
+                        onClick={() => setTab("Background")}>Background</h3>
+                    <h3 className="halfcover__text__link"
+                        onClick={() => setTab("Interests")}>Interests</h3>
+                    <h3 className="halfcover__text__link"
+                        onClick={() => setTab("Blog")}>Blog</h3>
                 </div>
             </div>
         </div>
