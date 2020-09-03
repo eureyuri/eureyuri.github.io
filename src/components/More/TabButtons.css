@@ -1,0 +1,25 @@
+.tabButtons__active {
+    width: 9rem;
+    height: 2.5rem;
+    background-color: #4198FF;
+    color: white;
+    transition: 0.4s;
+    border-radius: 5px 5px 5px 5px !important;
+}
+
+.tabButtons__active:hover {
+    background-color: #5da6ff;
+}
+
+.tabButtons {
+    width: 9rem;
+    height: 2.5rem;
+    border-color: #4198FF;
+    transition: 0.4s;
+    border-radius: 5px 5px 5px 5px !important;
+}
+
+.tabButtons:hover {
+    background-color: #4198FF;
+    color: white;
+}
