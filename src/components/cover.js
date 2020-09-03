@@ -11,7 +11,7 @@ export default function cover({ coverImage }) {
                 <Img
                     fluid={coverImage}
                     style={{
-                        position: "fixed",
+                        position: "static",
                         width: "50vw",
                         height: "100vh",
                         minHeight: "100vh"

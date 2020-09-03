@@ -80,8 +80,6 @@ export default function Home({ data }) {
                 onChange={(e, i) => setTabIndex(i)}
               />
             </ThemeProvider>
-
-
           </Container>
         </div>
 

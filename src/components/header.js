@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import "./header.css";
-import { useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -130,7 +129,7 @@ export default function Header({ headerText }) {
           <Drawer
             classes={{ paper: classes.MuiDrawerPaper }}
             anchor="right"
-            elevation="1000"
+            elevation={1000}
             open={openDrawer}
             onClose={toggleDrawer}
           >

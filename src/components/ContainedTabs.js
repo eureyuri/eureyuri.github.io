@@ -70,9 +70,6 @@ const useTabStyles = makeStyles(({ palette, spacing, breakpoints }) => {
 });
 
 function TabPanel({ children, value, index, ...other }) {
-  // console.clear();
-  // console.log(children.children);
-
   return (
     <div
       role="tabpanel"
