@@ -23,6 +23,9 @@ const typography = new Typography({
     h2: {
       fontFamily: ['Avenir Next', 'sans-serif'].join(','),
       fontWeight: "100",
+    },
+    h6: {
+      marginBottom: "0.2rem",
     }
   }),
   googleFonts: [
