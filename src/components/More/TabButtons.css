@@ -5,6 +5,8 @@
     color: white;
     transition: 0.4s;
     border-radius: 5px 5px 5px 5px !important;
+    margin-right: 0.5rem !important;
+    margin-left: 0.5rem !important;
 }
 
 .tabButtons__active:hover {
@@ -17,6 +19,8 @@
     border-color: #4198FF;
     transition: 0.4s;
     border-radius: 5px 5px 5px 5px !important;
+    margin-right: 0.5rem !important;
+    margin-left: 0.5rem !important;
 }
 
 .tabButtons:hover {

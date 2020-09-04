@@ -16,7 +16,12 @@ export default function More({ data }) {
 
         <div id="about" style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", marginTop: "-0.5rem"}}>
           <Container header={tab}>
-            {tab === "Background" && (<Background />)}
+            {tab === "Background" && (
+              <Background
+                columbiaImage={data.columbiaImage.childImageSharp.fluid}
+                brandeisImage={data.brandeisImage.childImageSharp.fluid}
+                stmaurImage={data.stmaurImage.childImageSharp.fluid} />
+            )}
             {tab === "Interests" && (<Interests />)}
           </Container>
         </div>
@@ -35,6 +40,27 @@ export const query = graphql`
         fluid(maxWidth: 1000) {
           ...GatsbyImageSharpFluid
           ...GatsbyImageSharpFluidLimitPresentationSize
+        }
+      }
+    }
+    columbiaImage: file(relativePath: { eq: "columbia.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    brandeisImage: file(relativePath: { eq: "brandeis.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    stmaurImage: file(relativePath: { eq: "stmaur.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
