@@ -72,13 +72,26 @@ export default function Header({ headerText }) {
       role="presentation"
     >
       <List className={classes.textList}>
-        {['More About Me', 'Interests', 'Blog', 'Resume'].map((text, index) => (
-          <Link to={"/more/"}>
-            <ListItem button key={text} className={classes.drawerButton}>
-              <ListItemText primary={text} className={classes.drawerContent}/>
-            </ListItem>
-          </Link>
-        ))}
+        <Link to={"/more/"}>
+          <ListItem button key={'More About Me'} className={classes.drawerButton}>
+            <ListItemText primary={'More About Me'} className={classes.drawerContent}/>
+          </ListItem>
+        </Link>
+        <Link to={"/more/"}>
+          <ListItem button key={'Interests'} className={classes.drawerButton}>
+            <ListItemText primary={'Interests'} className={classes.drawerContent}/>
+          </ListItem>
+        </Link>
+        <Link to={"/blog/"}>
+          <ListItem button key={'Blog'} className={classes.drawerButton}>
+            <ListItemText primary={'Blog'} className={classes.drawerContent}/>
+          </ListItem>
+        </Link>
+        <a href="https://drive.google.com/file/d/1MApQ9pWocj6k5_2tNM3QoAqmVE220OFC/view" target="_blank" rel="noreferrer nofollow">
+          <ListItem button key={'Resume'} className={classes.drawerButton}>
+            <ListItemText primary={'Resume'} className={classes.drawerContent}/>
+          </ListItem>
+        </a>
       </List>
     </div>
   )

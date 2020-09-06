@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import TabButtons from "./TabButtons";
 import TabContainer from "./TabContainer";
-import Education from './Education';
-import Work from './Work';
+import Education from './Contents/Education';
+import Work from './Contents/Work';
 
 export default function Background({ columbiaImage, brandeisImage, stmaurImage, micronImage, niImage, teamLabImage, influImage }) {
     const [button, setButton] = useState(0);
