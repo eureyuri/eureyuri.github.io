@@ -1,5 +1,5 @@
 import React from 'react';
-import TabGridLayout from "./TabGridLayout"
+import TabGridLayout from "../TabGridLayout"
 import Img from "gatsby-image"
 
 export default function Education({ columbiaImage, brandeisImage, stmaurImage }) {

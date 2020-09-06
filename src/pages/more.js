@@ -27,7 +27,17 @@ export default function More({ data }) {
                 influImage={data.influImage.childImageSharp.fluid} />
             )}
             {tab === "Interests" && (
-              <Interests />
+              <Interests
+                jsaImage={data.jsaImage.childImageSharp.fluid}
+                baseballImage={data.baseballImage.childImageSharp.fluid}
+                tohokuImage={data.tohokuImage.childImageSharp.fluid}
+                trumpetImage={data.trumpetImage.childImageSharp.fluid}
+                pianoImage={data.pianoImage.childImageSharp.fluid}
+                guitarImage={data.guitarImage.childImageSharp.fluid}
+                producingImage={data.producingImage.childImageSharp.fluid}
+                mangaImage={data.mangaImage.childImageSharp.fluid}
+                digitalImage={data.digitalImage.childImageSharp.fluid}
+              />
             )}
           </Container>
         </div>
@@ -92,6 +102,70 @@ export const query = graphql`
       }
     }
     influImage: file(relativePath: { eq: "influ.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    jsaImage: file(relativePath: { eq: "jsa.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    baseballImage: file(relativePath: { eq: "baseball.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    tohokuImage: file(relativePath: { eq: "tohoku.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    trumpetImage: file(relativePath: { eq: "trumpet.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    pianoImage: file(relativePath: { eq: "piano.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    guitarImage: file(relativePath: { eq: "guitar.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    producingImage: file(relativePath: { eq: "producing.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    mangaImage: file(relativePath: { eq: "manga.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    digitalImage: file(relativePath: { eq: "digital.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 200) {
           ...GatsbyImageSharpFluid
