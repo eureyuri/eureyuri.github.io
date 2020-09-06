@@ -20,9 +20,15 @@ export default function More({ data }) {
               <Background
                 columbiaImage={data.columbiaImage.childImageSharp.fluid}
                 brandeisImage={data.brandeisImage.childImageSharp.fluid}
-                stmaurImage={data.stmaurImage.childImageSharp.fluid} />
+                stmaurImage={data.stmaurImage.childImageSharp.fluid}
+                micronImage={data.micronImage.childImageSharp.fluid}
+                niImage={data.niImage.childImageSharp.fluid}
+                teamLabImage={data.teamLabImage.childImageSharp.fluid}
+                influImage={data.influImage.childImageSharp.fluid} />
             )}
-            {tab === "Interests" && (<Interests />)}
+            {tab === "Interests" && (
+              <Interests />
+            )}
           </Container>
         </div>
 
@@ -58,6 +64,34 @@ export const query = graphql`
       }
     }
     stmaurImage: file(relativePath: { eq: "stmaur.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    micronImage: file(relativePath: { eq: "micron.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    niImage: file(relativePath: { eq: "ni.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    teamLabImage: file(relativePath: { eq: "teamLab.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    influImage: file(relativePath: { eq: "influ.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 200) {
           ...GatsbyImageSharpFluid
