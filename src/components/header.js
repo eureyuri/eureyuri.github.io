@@ -19,12 +19,6 @@ const AnchorListLink = ({link, title}) => (
   </li>
 )
 
-const ListLink = props => (
-  <li className="header__links">
-    <Link to={props.to}>{props.children}</Link>
-  </li>
-)
-
 const useStyles = makeStyles({
   list: {
     width: "300px",
@@ -58,9 +52,17 @@ const useStyles = makeStyles({
   }
 });
 
-export default function Header({ headerText }) {
+export default function Header() {
   const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
+
+  const ListLink = ({link, title}) => (
+    <Link to={link}>
+      <ListItem button key={title} className={classes.drawerButton}>
+        <ListItemText primary={title} className={classes.drawerContent}/>
+      </ListItem>
+    </Link>
+  )
 
   const toggleDrawer = () => {
     setOpenDrawer(!openDrawer);
@@ -72,21 +74,9 @@ export default function Header({ headerText }) {
       role="presentation"
     >
       <List className={classes.textList}>
-        <Link to={"/more/"}>
-          <ListItem button key={'More About Me'} className={classes.drawerButton}>
-            <ListItemText primary={'More About Me'} className={classes.drawerContent}/>
-          </ListItem>
-        </Link>
-        <Link to={"/more/"}>
-          <ListItem button key={'Interests'} className={classes.drawerButton}>
-            <ListItemText primary={'Interests'} className={classes.drawerContent}/>
-          </ListItem>
-        </Link>
-        <Link to={"/blog/"}>
-          <ListItem button key={'Blog'} className={classes.drawerButton}>
-            <ListItemText primary={'Blog'} className={classes.drawerContent}/>
-          </ListItem>
-        </Link>
+        <ListLink link={"/more/"} title={"More About Me"} />
+        <ListLink link={"/more/"} title={"Interests"} />
+        <ListLink link={"/blog/"} title={"Blog"} />
         <a href="https://drive.google.com/file/d/1MApQ9pWocj6k5_2tNM3QoAqmVE220OFC/view" target="_blank" rel="noreferrer nofollow">
           <ListItem button key={'Resume'} className={classes.drawerButton}>
             <ListItemText primary={'Resume'} className={classes.drawerContent}/>

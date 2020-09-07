@@ -1,4 +1,9 @@
 const path = require(`path`)
+const dotenv = require("dotenv")
+
+if (process.env.ENVIRONMENT !== "production") {
+  dotenv.config()
+}
 
 module.exports = {
   siteMetadata: {
@@ -14,6 +19,13 @@ module.exports = {
       options: {
         name: `images`,
         path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.spaceId,
+        accessToken: process.env.accessToken,
       },
     },
     {
