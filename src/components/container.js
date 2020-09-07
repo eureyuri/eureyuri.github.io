@@ -4,8 +4,12 @@ import "./container.css";
 export default function Container({ header, children }) {
   return (
     <div className="container">
-      <h1 className="container__header">{header}</h1>
-      <hr></hr>
+      {header && (
+        <>
+          <h1 className="container__header">{header}</h1>
+          <hr></hr>
+        </>
+      )}
       {children}
     </div>
   )

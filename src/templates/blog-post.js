@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
+import HalfCover from '../components/halfCover';
 
 class BlogPost extends Component {
   render() {
@@ -11,7 +12,8 @@ class BlogPost extends Component {
     return (
       <div>
         <Layout>
-          <h1>{title}</h1>
+          <HalfCover title={title} />
+          <p>{title}</p>
         </Layout>
       </div>
     )

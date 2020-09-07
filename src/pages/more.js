@@ -12,7 +12,10 @@ export default function More({ data }) {
   return (
     <div>
       <Layout>
-        <HalfCover coverImage={data.coverImage.childImageSharp.fluid}
+        <HalfCover
+          title={"More About Eurey"}
+          subtitle={"Space for showcasing my creative side"}
+          coverImage={data.coverImage.childImageSharp.fluid}
           setTab={setTab} />
 
         <div id="about" style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", marginTop: "-0.5rem"}}>

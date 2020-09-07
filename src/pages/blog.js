@@ -16,9 +16,9 @@ export default function blog({data}) {
     return (
         <div>
             <Layout>
-                <HalfCover />
+                <HalfCover title={"Blog"} />
                 <div style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", marginTop: "-0.5rem"}}>
-                    <Container header={"Blog"}>
+                    <Container>
                         <ul>
                             {data.allContentfulBlog.edges.map(edge =>
                                 <BlogPost node={edge.node} />)}
