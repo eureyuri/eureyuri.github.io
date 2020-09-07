@@ -4,6 +4,7 @@ import HalfCover from "../components/halfCover";
 import Container from "../components/container";
 import Background from "../components/More/Background";
 import Interests from "../components/More/Interests";
+import { graphql } from "gatsby"
 
 export default function More({ data }) {
   const [tab, setTab] = useState("Background");
