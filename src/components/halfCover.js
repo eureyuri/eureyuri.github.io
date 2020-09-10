@@ -2,21 +2,32 @@ import React from 'react'
 import Img from "gatsby-image"
 import "./halfCover.css";
 
-export default function HalfCover({ coverImage, setTab, title, subtitle }) {
+export default function HalfCover({ coverImage, blogImage, setTab, title, subtitle }) {
     return (
         <div className="halfcover">
-            <Img
-                fluid={coverImage}
-                style={{
-                    position: "absolute",
+            {coverImage && (
+                <Img
+                    fluid={coverImage}
+                    style={{
+                        position: "absolute",
+                        width: "100vw",
+                        minWidth: "100vw",
+                        maxHeight: "70vh",
+                        right: "0",
+                        zIndex: "-1",
+                    }}
+                    objectFit="cover"
+                />
+            )}
+            {blogImage && (
+                <img src={blogImage}
+                    style={{position: "absolute",
                     width: "100vw",
                     minWidth: "100vw",
-                    maxHeight: "70vh",
                     right: "0",
-                    zIndex: "-1",
-                }}
-                objectFit="cover"
-            />
+                    zIndex: "-1",}}
+                />
+            )}
             <div className="halfcover__text">
                 <h1 className="halfcover__text__title">{title}</h1>
                 <p>{subtitle}</p>
