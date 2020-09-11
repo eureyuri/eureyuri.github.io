@@ -1,6 +1,6 @@
 import React from 'react'
-import SNSButtons from "../components/SNSButtons";
-import Header from "../components/header";
+import SNSButtons from "./SNSButtons";
+import Header from "./header";
 import { materialFontTheme, buttonStyle } from "../utils/materialTheme";
 
 import { ThemeProvider } from "@material-ui/core";
