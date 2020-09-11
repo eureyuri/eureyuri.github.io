@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import HalfCover from '../components/halfCover';
 import Container from '../components/container';
 
