@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import HalfCover from "../components/halfCover";
 import Container from "../components/container";
 import Background from "../components/More/Background";

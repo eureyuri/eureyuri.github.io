@@ -9,7 +9,7 @@ import ContainedTabs from "../components/ContainedTabs";
 import { ThemeProvider } from "@material-ui/core";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import { materialFontTheme } from "../utils/materialTheme";
 
 export default function Home({ data }) {

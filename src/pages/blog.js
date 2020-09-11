@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 import Container from '../components/container'
 import HalfCover from '../components/halfCover'
 import ProjectCard from '../components/ProjectCard'
