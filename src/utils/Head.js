@@ -6,7 +6,7 @@ export default () => (
         <title>Eurey Noguchi</title>
         <meta name="title" content="Eurey Noguchi" />
         <meta name="description" content="Personal website, portfolio, and blog for Eurey (Yuri) Noguchi." />
-        <link rel="canonical" href="http://eureyuri.codes" />
+        <link rel="canonical" href="https://www.eureyuri.codes/" />
 
         {/* <!-- Open Graph / Facebook --> */}
         <meta property="og:type" content="website" />
