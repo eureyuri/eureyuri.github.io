@@ -11,12 +11,15 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../components/layout";
 import { materialFontTheme } from "../utils/materialTheme";
+import Head from "../utils/Head";
 
 export default function Home({ data }) {
   const [tabIndex, setTabIndex] = useState(0);
 
   return (
     <div>
+      <Head />
+
       <Layout>
         <Cover coverImage={data.coverImage.childImageSharp.fluid} />
 
