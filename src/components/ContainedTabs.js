@@ -80,7 +80,7 @@ function TabPanel({ children, value, index, ...other }) {
       {...other}
     >
       {value === index && (
-        <div style={{display: "flex", flexWrap: "wrap"}}>
+        <div style={{display: "flex", flexWrap: "wrap", justifyContent: "center"}}>
           {children}
         </div>
       )}
