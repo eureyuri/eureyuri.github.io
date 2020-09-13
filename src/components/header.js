@@ -11,6 +11,7 @@ import clsx from 'clsx';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import MenuIcon from '@material-ui/icons/Menu';
+import logo from "../images/logo.png";
 
 
 const AnchorListLink = ({link, title}) => (
@@ -115,7 +116,7 @@ export default function Header() {
     <div className="header__container">
       <header>
         <AnchorLink to="/" title="EN" className="header__logo">
-          EN
+          <img className="logo" src={logo} alt="EN" />
         </AnchorLink>
         <ul className="header__nav">
           <AnchorListLink link="about" title="About" />
@@ -146,6 +147,5 @@ export default function Header() {
         </ul>
       </header>
     </div>
-
   )
 }
