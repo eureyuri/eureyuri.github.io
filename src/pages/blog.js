@@ -21,7 +21,7 @@ export default function blog({data}) {
     return (
         <div>
             <Layout>
-                <HalfCover title={"Blog"} />
+                <HalfCover title={"Blog"} coverImage={data.coverImage.childImageSharp.fluid} />
                 <div style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", marginTop: "-0.5rem"}}>
                     <Container>
                         <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
@@ -37,6 +37,14 @@ export default function blog({data}) {
 
 export const pageQuery = graphql`
     query pageQuery {
+        coverImage: file(relativePath: { eq: "cover2.jpeg" }) {
+            childImageSharp {
+                fluid(maxWidth: 1000) {
+                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluidLimitPresentationSize
+                }
+            }
+        }
         allContentfulBlog(
             filter: {
             node_locale: {eq: "en-US"}

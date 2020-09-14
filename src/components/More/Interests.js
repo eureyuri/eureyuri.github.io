@@ -6,7 +6,7 @@ import Music from './Contents/Music';
 import Drawing from './Contents/Drawing';
 import Video from './Contents/Video';
 
-export default function Background({ jsaImage, baseballImage, tohokuImage, trumpetImage, pianoImage, guitarImage, producingImage, mangaImage, digitalImage }) {
+export default function Background() {
     const [button, setButton] = useState(0);
 
     return (
@@ -14,13 +14,13 @@ export default function Background({ jsaImage, baseballImage, tohokuImage, trump
             <TabButtons button={button} setButton={setButton} labels={["Extracurricular", "Music", "Drawing", "Video"]}/>
             <TabContainer>
                 {button === 0 && (
-                    <Extracurricular jsaImage={jsaImage} baseballImage={baseballImage} tohokuImage={tohokuImage} />
+                    <Extracurricular />
                 )}
                 {button === 1 && (
-                    <Music trumpetImage={trumpetImage} pianoImage={pianoImage} guitarImage={guitarImage} producingImage={producingImage}/>
+                    <Music />
                 )}
                 {button === 2 && (
-                    <Drawing mangaImage={mangaImage} digitalImage={digitalImage} />
+                    <Drawing />
                 )}
                 {button === 3 && (
                     <Video />

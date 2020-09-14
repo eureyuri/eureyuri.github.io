@@ -4,7 +4,7 @@ import TabContainer from "./TabContainer";
 import Education from './Contents/Education';
 import Work from './Contents/Work';
 
-export default function Background({ columbiaImage, brandeisImage, stmaurImage, micronImage, niImage, teamLabImage, influImage }) {
+export default function Background() {
     const [button, setButton] = useState(0);
 
     return (
@@ -12,10 +12,10 @@ export default function Background({ columbiaImage, brandeisImage, stmaurImage, 
             <TabButtons button={button} setButton={setButton} labels={["Education", "Work Experience"]}/>
             <TabContainer>
                 {button === 0 && (
-                    <Education columbiaImage={columbiaImage} brandeisImage={brandeisImage} stmaurImage={stmaurImage} />
+                    <Education />
                 )}
                 {button === 1 && (
-                    <Work micronImage={micronImage} niImage={niImage} teamLabImage={teamLabImage} influImage={influImage}/>
+                    <Work />
                 )}
             </TabContainer>
 
