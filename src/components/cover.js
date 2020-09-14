@@ -32,7 +32,7 @@ export default function cover({ coverImage }) {
                                     <Typist.Backspace count={word.length} delay={500}/>
                                 ]))}
                             <Typist.Backspace count={7} />
-                            Designing <span className="cover__emphasis">Innovation</span>
+                            Engineering <span className="cover__emphasis">Usefulness & Usability</span>
                         </Typist>
                     </h2>
                     <SNSButtons isCover={true} />

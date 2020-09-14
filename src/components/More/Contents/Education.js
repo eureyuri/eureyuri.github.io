@@ -87,7 +87,7 @@ export default function Education() {
                                 <h6>- Mathematics</h6>
                             </>
                         }
-                        period={"2016 - 2019"} />
+                        period={"2009 - 2016"} />
                 </div>
             )}
         />
