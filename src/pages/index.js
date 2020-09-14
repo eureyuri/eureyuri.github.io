@@ -12,6 +12,7 @@ import Img from "gatsby-image";
 import Layout from "../components/layout";
 import { materialFontTheme } from "../utils/materialTheme";
 import Head from "../utils/Head";
+import CustomizedTimeline from "../components/CustomizedTimeline";
 
 export default function Home({ data }) {
   const [tabIndex, setTabIndex] = useState(0);
@@ -68,7 +69,15 @@ export default function Home({ data }) {
           </Container>
         </div>
 
-        <div id="projects" style={{background: "#F8F8F8", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
+        <div id="experiences" style={{background: "#F8F8F8", display: "block", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", overflowY: "scroll", height: "500px"}}>
+          <Container header="Experiences">
+            <ThemeProvider theme={materialFontTheme}>
+              <CustomizedTimeline />
+            </ThemeProvider>
+          </Container>
+        </div>
+
+        <div id="projects" style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
           <Container header="Projects">
             <ThemeProvider theme={materialFontTheme}>
               <ContainedTabs
@@ -86,7 +95,7 @@ export default function Home({ data }) {
           </Container>
         </div>
 
-        <div id="contact" style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
+        <div id="contact" style={{background: "#F8F8F8", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative"}}>
           <Container header="Contact">
             <p>Contact me for inquiries, personal websites, illustrations, designs, or for anything!</p>
             <a href="mailto: eureynoguchi@gmail.com" target="_blank" rel="noreferrer nofollow">

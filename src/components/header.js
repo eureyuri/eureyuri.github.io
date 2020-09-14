@@ -120,6 +120,7 @@ export default function Header() {
         </AnchorLink>
         <ul className="header__nav">
           <AnchorListLink link="about" title="About" />
+          <AnchorListLink link="experiences" title="Experiences" />
           <AnchorListLink link="projects" title="Projects" />
           <AnchorListLink link="contact" title="Contact" />
           <IconButton
