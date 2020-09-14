@@ -1,5 +1,6 @@
 # eureyuri portfolio website
 This is my new website specifically as a resume.
+Live [here](https://www.eureyuri.codes/)!
 
 ## Motivation / Description
 I realized v1.0 had many design issues to be a resume since there were many clicks to be made to reach the important content.
