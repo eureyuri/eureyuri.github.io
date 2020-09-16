@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "gatsby";
 import "./index.css";
 import Cover from "../components/cover";
@@ -13,9 +13,17 @@ import Layout from "../components/layout";
 import { materialFontTheme } from "../utils/materialTheme";
 import Head from "../utils/Head";
 import CustomizedTimeline from "../components/CustomizedTimeline";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Home({ data }) {
   const [tabIndex, setTabIndex] = useState(0);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+    });
+  })
 
   return (
     <div>
@@ -32,7 +40,7 @@ export default function Home({ data }) {
         <div id="about" style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", marginTop: "-0.5rem"}}>
           <Container header="About Me">
             <div className="index__container">
-              <div className="index__left">
+              <div className="index__left" data-aos="fade-right">
                 <Img
                   fluid={data.aboutImage.childImageSharp.fluid}
                 />
@@ -48,7 +56,10 @@ export default function Home({ data }) {
                   My life is all about app development for social impact, design, video, and music!
                 </p>
 
-                <Tools />
+                <div  data-aos="fade-left">
+                  <Tools />
+                </div>
+
 
                 <div className="index__buttons">
                   <Button
