@@ -26,7 +26,7 @@
 }
 
 .cover__text {
-    margin-left: 2.2rem;
+    margin: 0 2.2rem;
 }
 
 .cover__emphasis {
@@ -34,5 +34,31 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     /* font-weight: 300; */
+}
+
+/* For MOBILE */
+@media only screen and (max-width: 992px) {
+    .cover__left {
+        width: 100%;
+    }
+
+    .cover__right {
+        background-color: transparent;
+        width: 100%;
+    }
+
+    .cover__text > h1 {
+        font-weight: 600;
+    }
+
+    .cover__text > h2 {
+        font-weight: 600;
+    }
+
+    .cover__emphasis {
+        background: #ffb340;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
 

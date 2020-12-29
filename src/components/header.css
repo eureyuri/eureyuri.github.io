@@ -18,10 +18,7 @@
   }
 
 header {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin: 1rem 1.5rem;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -38,6 +35,10 @@ header.scrolled {
     margin-bottom: 0;
     display: flex;
     align-items: center;
+}
+
+.header__nav__mobile {
+    display: none;
 }
 
 .header__logo {
@@ -59,4 +60,19 @@ header.scrolled {
 
 .header__links:hover, .header__links:focus {
     color: #FF9900;
+}
+
+
+/* For MOBILE */
+@media only screen and (max-width: 992px) {
+    .header__nav__desktop {
+        display: none;
+    }
+
+    .header__nav__mobile {
+        display: block;
+        text-align: center;
+        margin: 15px 0 15px 0;
+        color: #4198FF;
+    }
 }

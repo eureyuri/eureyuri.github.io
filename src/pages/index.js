@@ -46,7 +46,7 @@ export default function Home({ data }) {
                 />
               </div>
               <div className="index__right">
-                <p className="index__text">
+                <p className="index__text index__text__first">
                   I am a senior at Columbia University majoring in Computer Engineering seeking opportunities to work in the U.S.
                 </p>
                 <p className="index__text">
@@ -56,7 +56,7 @@ export default function Home({ data }) {
                   My life is all about app development for social impact, design, video, and music!
                 </p>
 
-                <div  data-aos="fade-left">
+                <div data-aos="fade-in">
                   <Tools />
                 </div>
 
