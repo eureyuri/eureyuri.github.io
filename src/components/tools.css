@@ -5,7 +5,7 @@
 
 .MuiButton-root {
     text-transform: none !important;
-    margin-right: 1rem !important;
+    margin-right: 0.5rem !important;
     margin-bottom: 0.3rem !important;
     border-radius: 20px 20px 20px 20px;
     min-width: max-content !important;
