@@ -14,9 +14,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import logo from "../images/logo.png";
 
 
-const AnchorListLink = ({link, title}) => (
-  <li className="header__links">
-    <AnchorLink to={`/#${link}`} title={title} />
+const AnchorListLink = ({link, title, className}) => (
+  <li className={`header__links ${className.nav}`}>
+    <AnchorLink to={`/#${link}`} title={title} className={className.li} />
   </li>
 )
 
@@ -25,6 +25,9 @@ const useStyles = makeStyles({
     width: "300px",
     display: "flex",
     justifyContent: "center"
+  },
+  hamburgerIcon: {
+    fontSize: "2rem",
   },
   MuiDrawerPaper: {
     backgroundColor: "rgba(255, 255, 255, 0.8)",
@@ -57,13 +60,25 @@ export default function Header() {
   const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
 
-  const ListLink = ({link, title}) => (
-    <Link to={link}>
-      <ListItem button key={title} className={classes.drawerButton}>
-        <ListItemText primary={title} className={classes.drawerContent}/>
-      </ListItem>
-    </Link>
-  )
+  const ListLink = ({link, title, className}) => {
+    if (className) {
+      return (
+        <AnchorLink to={`/#${link}`} title={title} className={className.nav}>
+          <ListItem button key={title} className={classes.drawerButton}>
+            <ListItemText primary={title} className={classes.drawerContent} />
+          </ListItem>
+        </AnchorLink>
+      )
+    } else {
+      return (
+        <Link to={link}>
+          <ListItem button key={title} className={classes.drawerButton}>
+            <ListItemText primary={title} className={classes.drawerContent} />
+          </ListItem>
+        </Link>
+      )
+    }
+  }
 
   const toggleDrawer = () => {
     setOpenDrawer(!openDrawer);
@@ -75,6 +90,11 @@ export default function Header() {
       role="presentation"
     >
       <List className={classes.textList}>
+        <ListLink link="about" title="About" className={{nav:  "header__nav__mobile", li: "hamburger__item__mobile" }} />
+        <ListLink link="experiences" title="Experiences" className={{nav:  "header__nav__mobile", li: "hamburger__item__mobile" }} />
+        <ListLink link="projects" title="Projects" className={{nav:  "header__nav__mobile", li: "hamburger__item__mobile" }} />
+        <ListLink link="contact" title="Contact" className={{nav:  "header__nav__mobile", li: "hamburger__item__mobile" }} />
+
         <ListLink link={"/more/"} title={"More About Me"} />
         <ListLink link={"/more/"} title={"Interests"} />
         <ListLink link={"/blog/"} title={"Blog"} />
@@ -119,17 +139,17 @@ export default function Header() {
           <img className="logo" src={logo} alt="EN" />
         </AnchorLink>
         <ul className="header__nav">
-          <AnchorListLink link="about" title="About" />
-          <AnchorListLink link="experiences" title="Experiences" />
-          <AnchorListLink link="projects" title="Projects" />
-          <AnchorListLink link="contact" title="Contact" />
+          <AnchorListLink link="about" title="About" className={{ nav: "header__nav__desktop" }} />
+          <AnchorListLink link="experiences" title="Experiences" className={{ nav: "header__nav__desktop" }} />
+          <AnchorListLink link="projects" title="Projects" className={{ nav: "header__nav__desktop" }} />
+          <AnchorListLink link="contact" title="Contact" className={{ nav: "header__nav__desktop" }} />
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={toggleDrawer}
             edge="start"
           >
-            <MenuIcon />
+            <MenuIcon className={classes.hamburgerIcon} />
           </IconButton>
           <Drawer
             classes={{ paper: classes.MuiDrawerPaper }}

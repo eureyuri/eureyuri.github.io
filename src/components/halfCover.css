@@ -5,6 +5,8 @@
     background-color: black;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .halfcover__text {
@@ -13,11 +15,10 @@
     flex-direction: column;
     align-items: center;
     z-index: 2;
-    height: 100%;
     text-align: center;
-    margin-right: 8rem;
-    margin-left: 8rem;
-    margin-top: 5rem;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 10px 80px;
 }
 
 .halfcover__text__title {
@@ -26,10 +27,10 @@
 
 .halfcover__text__links {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 2rem;
     cursor: pointer;
+    width: 105%
 }
 
 .halfcover__text__link {
@@ -37,7 +38,7 @@
     position: relative;
     display: inline-block;
     font-weight: 300;
-    color: #0075FF;
+    color: #0075ff;
     overflow: hidden;
     background: linear-gradient(to right, #007bff, #007bff 50%, white 50%);
     background-clip: text;
@@ -46,8 +47,22 @@
     background-size: 200% 100%;
     background-position: 100%;
     transition: background-position 275ms ease;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 8px 16px;
 }
 
 .halfcover__text__link:hover {
     background-position: 0 100%;
+    border-color: #0075ff;
+}
+
+
+/* For MOBILE */
+@media only screen and (max-width: 992px) {
+    .halfcover__text__links {
+        justify-content: center;
+    }
 }

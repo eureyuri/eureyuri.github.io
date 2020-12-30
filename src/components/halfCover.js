@@ -12,7 +12,7 @@ export default function HalfCover({ coverImage, blogImage, setTab, title, subtit
                         position: "absolute",
                         width: "100vw",
                         minWidth: "100vw",
-                        maxHeight: "70vh",
+                        minHeight: "70vh",
                         right: "0",
                         zIndex: "-1",
                     }}
@@ -20,12 +20,16 @@ export default function HalfCover({ coverImage, blogImage, setTab, title, subtit
                 />
             )}
             {blogImage && (
-                <img src={blogImage}
-                    style={{position: "absolute",
-                    width: "100vw",
-                    minWidth: "100vw",
-                    right: "0",
-                    zIndex: "-1",}}
+                <img 
+                    src={blogImage}
+                    style={{
+                      position: "absolute",
+                      width: "100vw",
+                      minWidth: "100vw",
+                      right: "0",
+                      zIndex: "-1",
+                    }}
+                    alt={"Fireworks seen in Hamamatsu Japan from a cruise"}
                 />
             )}
             <div className="halfcover__text">

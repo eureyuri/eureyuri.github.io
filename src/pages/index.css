@@ -91,3 +91,23 @@ h1 {
         display: none;
     }
 }
+
+/* For MOBILE */
+@media only screen and (max-width: 992px) {
+    .index__container {
+        flex-direction: column;
+    }
+
+    .index__left {
+        width: 100%;
+    }
+
+    .index__right {
+        width: 100%;
+        padding: 0;
+    }
+
+    .index__text__first {
+        margin-top: 1.4rem
+    }
+}
