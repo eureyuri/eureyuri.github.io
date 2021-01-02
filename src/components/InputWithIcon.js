@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function InputWithIcon() {
+export default function InputWithIcon({ onChange }) {
   const classes = useStyles();
 
   return (
@@ -21,7 +21,7 @@ export default function InputWithIcon() {
             <SearchIcon />
           </Grid>
           <Grid item>
-            <TextField label="Search for post" />
+            <TextField label="Search for post" onChange={onChange}/>
           </Grid>
         </Grid>
       </div>

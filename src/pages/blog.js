@@ -21,13 +21,17 @@ const BlogPost = ({node}) => {
 export default function Blog({data}) {
     const [search, setSearch] = useState("");
 
+    const onChange = (e) => {
+        setSearch(e.target.value);
+    }
+
     return (
         <div>
             <Layout>
                 <HalfCover title={"Blog"} coverImage={data.coverImage.childImageSharp.fluid} />
                 <div style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", marginTop: "-0.5rem"}}>
                     <Container size="small">
-                        <InputWithIcon />
+                        <InputWithIcon onChange={onChange} />
                         <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
                             {data.allContentfulBlog.edges
                               .filter(edge => edge.node.title.toLowerCase().includes(search))
