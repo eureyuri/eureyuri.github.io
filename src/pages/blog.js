@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from "react"
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import HalfCover from '../components/halfCover'
 import ProjectCard from '../components/ProjectCard'
+import InputWithIcon from '../components/InputWithIcon'
 
 const BlogPost = ({node}) => {
     return (
@@ -17,15 +18,20 @@ const BlogPost = ({node}) => {
     )
 }
 
-export default function blog({data}) {
+export default function Blog({data}) {
+    const [search, setSearch] = useState("");
+
     return (
         <div>
             <Layout>
                 <HalfCover title={"Blog"} coverImage={data.coverImage.childImageSharp.fluid} />
                 <div style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", marginTop: "-0.5rem"}}>
-                    <Container>
+                    <Container size="small">
+                        <InputWithIcon />
                         <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
-                            {data.allContentfulBlog.edges.map(edge =>
+                            {data.allContentfulBlog.edges
+                              .filter(edge => edge.node.title.toLowerCase().includes(search))
+                              .map(edge =>
                                 <BlogPost node={edge.node} />)}
                         </div>
                     </Container>
