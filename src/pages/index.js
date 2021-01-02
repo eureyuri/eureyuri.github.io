@@ -66,7 +66,7 @@ export default function Home({ data }) {
                     className="resume_button"
                     variant="contained"
                     disableElevation
-                    onClick={() => { window.open("https://drive.google.com/file/d/1MApQ9pWocj6k5_2tNM3QoAqmVE220OFC/view", '_blank') }}>Resume</Button>
+                    onClick={() => { window.open("https://drive.google.com/file/d/1_TtgR3HEABau-rBxm2rdvUe7dTN5yFeT/view?usp=sharing", '_blank') }}>Resume</Button>
                   <Link to="/more/">
                     <Button
                       className="more_button"
