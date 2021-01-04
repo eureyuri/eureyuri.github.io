@@ -149,19 +149,19 @@ const ContainedTabs = ({ tabs, tabStyle, tabProps, ...props }) => {
           </TabPanel>
           <TabPanel value={props.value} index={1}>
             {data.allContentfulProject.edges.map(edge =>
-              (edge.node.tags.includes("Web") && <ProjectPost node={edge.node} />))}
+              (edge.node.tags.includes("Design") && <ProjectPost node={edge.node} />))}
           </TabPanel>
           <TabPanel value={props.value} index={2}>
             {data.allContentfulProject.edges.map(edge =>
-              (edge.node.tags.includes("Mobile") && <ProjectPost node={edge.node} />))}
+              (edge.node.tags.includes("Web") && <ProjectPost node={edge.node} />))}
           </TabPanel>
           <TabPanel value={props.value} index={3}>
             {data.allContentfulProject.edges.map(edge =>
-              (edge.node.tags.includes("CLI") && <ProjectPost node={edge.node} />))}
+              (edge.node.tags.includes("Mobile") && <ProjectPost node={edge.node} />))}
           </TabPanel>
           <TabPanel value={props.value} index={4}>
             {data.allContentfulProject.edges.map(edge =>
-              (edge.node.tags.includes("Design") && <ProjectPost node={edge.node} />))}
+              (edge.node.tags.includes("CLI") && <ProjectPost node={edge.node} />))}
           </TabPanel>
         </div>
       )}
