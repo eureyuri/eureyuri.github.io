@@ -39,7 +39,7 @@ export default function Blog({data}) {
         } else {
             setResults(blogPosts);
         }
-    }, [debouncedSearchTerm]);
+    }, [debouncedSearchTerm, blogPosts]);
 
     return (
         <div>
@@ -52,7 +52,7 @@ export default function Blog({data}) {
                             {results.length < 1 && <h2>Posts for {searchTerm} coming soon...</h2>}
                             {results
                               .map(edge =>
-                                <BlogPost node={edge.node} />)}
+                                <BlogPost node={edge.node} key={edge.node.slug} />)}
                         </div>
                     </Container>
                     </div>
