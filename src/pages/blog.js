@@ -1,10 +1,11 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import HalfCover from '../components/halfCover'
 import ProjectCard from '../components/ProjectCard'
 import InputWithIcon from '../components/InputWithIcon'
+import { useDebounce } from '../utils/utils';
 
 const BlogPost = ({node}) => {
     return (
@@ -19,11 +20,26 @@ const BlogPost = ({node}) => {
 }
 
 export default function Blog({data}) {
-    const [search, setSearch] = useState("");
+    const blogPosts = data.allContentfulBlog.edges;
 
-    const onChange = (e) => {
-        setSearch(e.target.value);
+    const searchPost = (search) => {
+        return blogPosts.filter(edge => {
+            const regex = new RegExp(search, "i"); // Case insensitive
+            return regex.test(edge.node.title);
+        })
     }
+
+    const [searchTerm, setSearchTerm] = useState("");
+    const [results, setResults] = useState(blogPosts);
+    const debouncedSearchTerm = useDebounce(searchTerm, 200);
+
+    useEffect(() => {
+        if (debouncedSearchTerm) {
+            setResults(searchPost(debouncedSearchTerm));
+        } else {
+            setResults(blogPosts);
+        }
+    }, [debouncedSearchTerm]);
 
     return (
         <div>
@@ -31,10 +47,10 @@ export default function Blog({data}) {
                 <HalfCover title={"Blog"} coverImage={data.coverImage.childImageSharp.fluid} />
                 <div style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", marginTop: "-0.5rem"}}>
                     <Container size="small">
-                        <InputWithIcon onChange={onChange} />
+                        <InputWithIcon onChange={e => setSearchTerm(e.target.value)} />
                         <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
-                            {data.allContentfulBlog.edges
-                              .filter(edge => edge.node.title.toLowerCase().includes(search))
+                            {results.length < 1 && <h2>Posts for {searchTerm} coming soon...</h2>}
+                            {results
                               .map(edge =>
                                 <BlogPost node={edge.node} />)}
                         </div>
