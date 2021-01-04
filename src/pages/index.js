@@ -94,10 +94,10 @@ export default function Home({ data }) {
               <ContainedTabs
                 tabs={[
                   { label: "All" },
+                  { label: "Design"},
                   { label: "Web" },
                   { label: "Mobile" },
                   { label: "CLI" },
-                  { label: "Design"}
                 ]}
                 value={tabIndex}
                 onChange={(e, i) => setTabIndex(i)}
