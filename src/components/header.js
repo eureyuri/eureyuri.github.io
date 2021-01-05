@@ -154,7 +154,7 @@ export default function Header() {
           <Drawer
             classes={{ paper: classes.MuiDrawerPaper }}
             anchor="right"
-            elevation={1000}
+            elevation={20}
             open={openDrawer}
             onClose={toggleDrawer}
           >

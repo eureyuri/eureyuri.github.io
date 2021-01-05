@@ -6,8 +6,14 @@ export default function Extracurricular() {
         <div>
             <TabGridLayout
                 logo={
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/PlLBLpd_eSw" style={{display:"block", width:"100%",transform:"scale(0.7)", borderRadius:"15px"}} allowfullscreen></iframe>
+                    <div className="embed-responsive embed-responsive-16by9">
+                        <iframe className="embed-responsive-item"
+                                src="https://www.youtube.com/embed/PlLBLpd_eSw"
+                                style={{display:"block", width:"100%",transform:"scale(0.7)", borderRadius:"15px"}}
+                                allowFullScreen
+                                title="Opening video of the YouTube channel Tworeahamw managed by Eurey."
+                        >
+                        </iframe>
                     </div>
                 }
                 title={"Video Production"}

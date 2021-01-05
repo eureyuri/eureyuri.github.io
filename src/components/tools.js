@@ -12,13 +12,11 @@ export default function Tools() {
                     <React.Fragment>
                         {
                             props.frameworks.map(framework => (
-                                <div>{framework}</div>
+                                <div key={framework}>{framework}</div>
                             ))
                         }
                     </React.Fragment>
                 }
-                maxWidth={"none"}
-                backgroundColor={'white'}
                 arrow TransitionComponent={Zoom}>
                 <Button className="tooltip__button">{props.language}</Button>
             </Tooltip>

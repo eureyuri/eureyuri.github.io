@@ -71,7 +71,11 @@ export default function Work() {
                                 <h6>- Hardware side was made with Lego Mindstorms and ultrasonic sensor to create a robot arm that accepts resumes and drops them off at a designated box</h6>
                                 <h6>
                                     - Live demonstration can be found
-                                    <a href="https://drive.google.com/file/d/1U59FKCH5oq283TpZ-8DgekAybgqeowgW/view?usp=sharing" target="_blank" style={{color: "#0075FF"}}> here</a>
+                                    <a href="https://drive.google.com/file/d/1U59FKCH5oq283TpZ-8DgekAybgqeowgW/view?usp=sharing"
+                                       target="_blank"
+                                       style={{color: "#0075FF"}}
+                                       rel="noreferrer"
+                                    > here</a>
                                 </h6>
                             </>
                         }
