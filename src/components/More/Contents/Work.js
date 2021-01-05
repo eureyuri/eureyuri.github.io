@@ -41,7 +41,11 @@ export default function Work() {
             render={data => (
                 <div>
                     <TabGridLayout
-                        logo={<Img fluid={data.micronImage.childImageSharp.fluid} />}
+                        logo={
+                          <Img fluid={data.micronImage.childImageSharp.fluid}
+                               alt="Logo of Micron"
+                          />
+                        }
                         title={"Micron Memory Japan"}
                         subtitle={"Failure Analysis Intern"}
                         description={
@@ -54,7 +58,10 @@ export default function Work() {
                         period={"June 2019"} />
 
                     <TabGridLayout
-                        logo={<Img fluid={data.niImage.childImageSharp.fluid} />}
+                        logo={
+                          <Img fluid={data.niImage.childImageSharp.fluid}
+                          alt="Logo of National Instruments"/>
+                        }
                         title={"National Instruments Japan"}
                         subtitle={"Software and Hardware Engineer Intern"}
                         description={
@@ -71,7 +78,11 @@ export default function Work() {
                         period={"July 2018"} />
 
                     <TabGridLayout
-                        logo={<Img fluid={data.teamLabImage.childImageSharp.fluid} />}
+                        logo={
+                          <Img fluid={data.teamLabImage.childImageSharp.fluid}
+                                alt="Logo of teamLab"
+                          />
+                        }
                         title={"teamLab Inc."}
                         subtitle={"Data Scientist at Machine Learning Team"}
                         description={
@@ -84,7 +95,11 @@ export default function Work() {
                         period={"May 2018 - June 2018"} />
 
                     <TabGridLayout
-                        logo={<Img fluid={data.influImage.childImageSharp.fluid} />}
+                        logo={
+                          <Img fluid={data.influImage.childImageSharp.fluid}
+                                alt="Logo of influ"
+                          />
+                        }
                         title={"influ Inc."}
                         subtitle={"Software Engineer Intern"}
                         description={

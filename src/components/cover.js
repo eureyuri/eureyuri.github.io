@@ -17,6 +17,7 @@ export default function cover({ coverImage }) {
                         minHeight: "100vh"
                     }}
                     objectFit="cover"
+                    alt="A view of Puerto Rico ocean from a hotel room nicely blending into the cover background."
                 />
             </div>
             <div className="cover__right">

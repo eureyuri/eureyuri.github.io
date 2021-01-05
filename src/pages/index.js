@@ -43,6 +43,7 @@ export default function Home({ data }) {
               <div className="index__left" data-aos="fade-right">
                 <Img
                   fluid={data.aboutImage.childImageSharp.fluid}
+                  alt="Illustration of Eurey with a laptop, trumpet, guitar, and midi keyboard, which are his interests drawn by Eurey."
                 />
               </div>
               <div className="index__right">
