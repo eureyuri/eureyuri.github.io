@@ -136,7 +136,7 @@ export default function Header() {
     <div className="header__container">
       <header>
         <AnchorLink to="/" title="EN" className="header__logo">
-          <img className="logo" src={logo} alt="EN" />
+          <img className="logo" src={logo} alt="Logo written as EN for Eurey Noguchi" />
         </AnchorLink>
         <ul className="header__nav">
           <AnchorListLink link="about" title="About" className={{ nav: "header__nav__desktop" }} />

@@ -34,7 +34,12 @@ export default function Extracurricular() {
             render={data => (
                 <div>
                     <TabGridLayout
-                        logo={<Img fluid={data.jsaImage.childImageSharp.fluid} style={{borderRadius: "15px"}} />}
+                        logo={
+                          <Img fluid={data.jsaImage.childImageSharp.fluid}
+                               style={{borderRadius: "15px"}}
+                               alt="Group photo of Brandeis Japanese Student Association at annual festival J-SAI 2019. Eurey is at the center posing."
+                          />
+                        }
                         title={"Brandeis Japanese Student Association"}
                         subtitle={"President (2018-2019), Vice President (2017-2018), Freshman Representative (2016-2017)"}
                         description={
@@ -52,7 +57,13 @@ export default function Extracurricular() {
                         period={"2016 - 2019"} />
 
                     <TabGridLayout
-                        logo={<Img fluid={data.baseballImage.childImageSharp.fluid} style={{borderRadius: "15px"}} />}
+                        logo={
+                          <Img
+                            fluid={data.baseballImage.childImageSharp.fluid}
+                            style={{borderRadius: "15px"}}
+                            alt="Middle school Eurey pitching."
+                          />
+                        }
                         title={"Baseball Coach at Regional Baseball Club"}
                         description={
                             <>
@@ -63,7 +74,12 @@ export default function Extracurricular() {
                         period={"2014 - 2016"} />
 
                     <TabGridLayout
-                        logo={<Img fluid={data.tohokuImage.childImageSharp.fluid} style={{borderRadius: "15px"}} />}
+                        logo={
+                          <Img fluid={data.tohokuImage.childImageSharp.fluid}
+                               style={{borderRadius: "15px"}}
+                               alt="Devastated Tohoku region after the earthquake and tsunami."
+                          />
+                        }
                         title={"Volunteering at Tohoku, Japan after the Great East Japan Earthquake"}
                         subtitle={"Human Security Program, University of Tokyo"}
                         description={

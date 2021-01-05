@@ -41,7 +41,12 @@ export default function Extracurricular() {
             render={data => (
                 <div>
                     <TabGridLayout
-                        logo={<Img fluid={data.trumpetImage.childImageSharp.fluid} style={{borderRadius: "15px"}} />}
+                        logo={
+                          <Img fluid={data.trumpetImage.childImageSharp.fluid}
+                               style={{borderRadius: "15px"}}
+                               alt="Eurey playing the Trumpet at a Jazz concert"
+                          />
+                        }
                         title={"Trumpet"}
                         subtitle={"Trinity Exam Grade 8"}
                         description={
@@ -56,7 +61,12 @@ export default function Extracurricular() {
                         period={"2009 - Present"} />
 
                     <TabGridLayout
-                        logo={<Img fluid={data.pianoImage.childImageSharp.fluid} style={{borderRadius: "15px"}} />}
+                        logo={
+                          <Img fluid={data.pianoImage.childImageSharp.fluid}
+                               style={{borderRadius: "15px"}}
+                               alt="Kindergarten Eurey playing the Piano at recital"
+                          />
+                        }
                         title={"Piano"}
                         subtitle={"Trinity Exam Grade 5"}
                         description={
@@ -67,7 +77,12 @@ export default function Extracurricular() {
                         period={"2001 - Present"} />
 
                     <TabGridLayout
-                        logo={<Img fluid={data.guitarImage.childImageSharp.fluid} style={{borderRadius: "15px"}} />}
+                        logo={
+                          <Img fluid={data.guitarImage.childImageSharp.fluid}
+                               style={{borderRadius: "15px"}}
+                               alt="Eurey playing acoustic guitar"
+                          />
+                        }
                         title={"Acoustic Guitar"}
                         subtitle={"Beginner"}
                         description={
@@ -78,7 +93,12 @@ export default function Extracurricular() {
                         period={"2020 - Present"} />
 
                     <TabGridLayout
-                        logo={<Img fluid={data.producingImage.childImageSharp.fluid} style={{borderRadius: "15px"}} />}
+                        logo={
+                          <Img fluid={data.producingImage.childImageSharp.fluid}
+                               style={{borderRadius: "15px"}}
+                               alt="Eurey composing music with Logic Pro X and a midi keyboard."
+                          />
+                        }
                         title={"Music Production"}
                         subtitle={"Beginner"}
                         description={

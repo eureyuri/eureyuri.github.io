@@ -17,6 +17,7 @@ export default function HalfCover({ coverImage, blogImage, setTab, title, subtit
                         zIndex: "-1",
                     }}
                     objectFit="cover"
+                    alt="A summer festival in Japan"
                 />
             )}
             {blogImage && (

@@ -27,7 +27,12 @@ export default function Extracurricular() {
             render={data => (
                 <div>
                     <TabGridLayout
-                        logo={<Img fluid={data.mangaImage.childImageSharp.fluid} style={{borderRadius: "15px"}} />}
+                        logo={
+                          <Img fluid={data.mangaImage.childImageSharp.fluid}
+                               style={{borderRadius: "15px"}}
+                               alt="Manga illustration drawn by Eurey with Photoshop."
+                          />
+                        }
                         title={"Manga Artist"}
                         subtitle={"Runs and maintains Web Manga website"}
                         description={
@@ -42,7 +47,12 @@ export default function Extracurricular() {
                         period={"2010 - Present"} />
 
                     <TabGridLayout
-                        logo={<Img fluid={data.digitalImage.childImageSharp.fluid} style={{borderRadius: "15px"}} />}
+                        logo={
+                          <Img fluid={data.digitalImage.childImageSharp.fluid}
+                               style={{borderRadius: "15px"}}
+                               alt="An illustration of a boy and girl couple walking."
+                          />
+                        }
                         title={"Digital Artist"}
                         description={
                             <>
