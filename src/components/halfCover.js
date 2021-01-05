@@ -39,9 +39,11 @@ export default function HalfCover({ coverImage, blogImage, setTab, title, subtit
                 {setTab && (
                     <div className="halfcover__text__links">
                         <h3 className="halfcover__text__link"
-                            onClick={() => setTab("Background")}>Background</h3>
+                            onClick={() => setTab("Background")}
+                            onKeyDown={() => setTab("Background")}>Background</h3>
                         <h3 className="halfcover__text__link"
-                            onClick={() => setTab("Interests")}>Interests</h3>
+                            onClick={() => setTab("Interests")}
+                            onKeyDown={() => setTab("Interests")}>Interests</h3>
                     </div>
                 )}
             </div>

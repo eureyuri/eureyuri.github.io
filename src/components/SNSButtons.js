@@ -27,7 +27,7 @@ export default function SNSButtons({ isCover, buttonStyle }) {
             const buttonsContainer = document.getElementsByClassName("snsbuttons__container")[1];
             buttonsContainer.style.opacity = 0;
         }
-    }, []);
+    }, [isCover]);
 
     useEffect(() => {
         if (isCover) {
@@ -37,7 +37,7 @@ export default function SNSButtons({ isCover, buttonStyle }) {
                 window.removeEventListener("scroll", handleButtonOnScroll);
             }
         }
-    }, []);
+    }, [isCover]);
 
     return (
         <div className="snsbuttons__container" style={buttonStyle}>
@@ -49,7 +49,9 @@ export default function SNSButtons({ isCover, buttonStyle }) {
             <a href="https://www.linkedin.com/in/eurey-noguchi/" target="_blank" rel="noreferrer nofollow">
                 <FontAwesomeIcon className="icon__linkedin" icon={['fab', 'linkedin']} />
             </a>
-            <a href="https://www.youtube.com/channel/UCOScmlJ9J2xpLwuOYQu4n9Q" target="_blank" rel="nofollow">
+            <a href="https://www.youtube.com/channel/UCOScmlJ9J2xpLwuOYQu4n9Q"
+               target="_blank"
+               rel="noreferrer nofollow">
                 <FontAwesomeIcon className="icon__youtube" icon={['fab', 'youtube']} />
             </a>
         </div>

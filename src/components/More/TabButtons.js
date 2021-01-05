@@ -9,17 +9,26 @@ export default function TabButtons({ button, setButton, labels }) {
             {
                 labels.map((label, i) => {
                     if (button === i) {
-                        return (<Button
+                        return (
+                          <Button
                             className="tabButtons__active"
                             variant="contained"
-                            disableElevation>{label}
-                        </Button>)
+                            disableElevation
+                            key={label}
+                          >
+                              {label}
+                          </Button>
+                        )
                     }
-                    return (<Button
+                    return (
+                      <Button
                         className="tabButtons"
                         variant="outlined"
                         disableElevation
-                        onClick={() => { setButton(i) }}>{label}
+                        onClick={() => { setButton(i) }}
+                        key={label}
+                      >
+                          {label}
                     </Button>)
                 })
             }
