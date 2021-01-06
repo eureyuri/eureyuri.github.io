@@ -14,7 +14,7 @@ export default function Extracurricular() {
                                 title="Opening video of the YouTube channel Tworeahamw managed by Eurey."
                         >
                         </iframe>
-                    </div>
+                     </div>
                 }
                 title={"Video Production"}
                 subtitle={"Runs YouTube channel (link in footer)"}
