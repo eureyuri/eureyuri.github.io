@@ -95,7 +95,9 @@ const ProjectPost = ({node}) => (
     image={node.heroImage.file.url}
     body={node.description.description}
     demo={node.demo}
-    github={node.github} />
+    github={node.github}
+    blog={node.blog}
+  />
 )
 
 const ContainedTabs = ({ tabs, tabStyle, tabProps, ...props }) => {
@@ -128,6 +130,7 @@ const ContainedTabs = ({ tabs, tabStyle, tabProps, ...props }) => {
                 }
                 demo
                 github
+                blog
                 publishDate
                 tags
               }
