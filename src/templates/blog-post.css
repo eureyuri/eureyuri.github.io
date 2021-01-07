@@ -1,0 +1,23 @@
+a {
+    color: #0075FF;
+}
+
+img {
+    display: block;
+}
+
+h2,
+h3 {
+    margin-top: 2rem;
+    font-weight: bold;
+    overflow: hidden;
+}
+h2:after,
+h3:after {
+    content:'';
+      display:inline-block;
+      width:100%; height:100%;
+      margin-right:-100%;
+      border-bottom:1px solid #000;
+}
+
