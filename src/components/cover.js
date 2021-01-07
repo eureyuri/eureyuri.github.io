@@ -23,7 +23,7 @@ export default function cover({ coverImage }) {
             <div className="cover__right">
                 <div className="cover__text">
                     <h1>Eurey Noguchi</h1>
-                    <h2>
+                    <h2 className="cover__text_typing">
                         <Typist cursor={{hideWhenDone: true}}>
                             Designing <span className="cover__emphasis">Innovation</span>
                             <Typist.Backspace count={20} delay={500}/>

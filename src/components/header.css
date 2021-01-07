@@ -37,6 +37,10 @@ header.scrolled {
     align-items: center;
 }
 
+.header__nav__desktop > a {
+    color: inherit;
+}
+
 .header__nav__mobile {
     display: none;
 }
