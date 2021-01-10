@@ -98,7 +98,7 @@ export default function Header() {
         <ListLink link={"/more/"} title={"More About Me"} />
         <ListLink link={"/more/"} title={"Interests"} />
         <ListLink link={"/blog/"} title={"Blog"} />
-        <a href="https://drive.google.com/file/d/1MApQ9pWocj6k5_2tNM3QoAqmVE220OFC/view" target="_blank" rel="noreferrer nofollow">
+        <a href="https://drive.google.com/file/d/1_TtgR3HEABau-rBxm2rdvUe7dTN5yFeT/view?usp=sharing" target="_blank" rel="noreferrer nofollow">
           <ListItem button key={'Resume'} className={classes.drawerButton}>
             <ListItemText primary={'Resume'} className={classes.drawerContent}/>
           </ListItem>
