@@ -3,6 +3,10 @@
     font-size: 1.8rem;
 }
 
+.snsbuttons__container > a {
+    color: inherit;
+}
+
 .snsbuttons__container.fadeOut {
     transition-duration: 300ms;
     transition-property: opacity;

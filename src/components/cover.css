@@ -5,6 +5,10 @@
     background-color: white;
 }
 
+.cover__text_typing:after {
+    border-bottom: none;
+}
+
 .cover__left {
     /* background-color: black; */
     width: 50%;

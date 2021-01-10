@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import HalfCover from '../components/halfCover';
 import Container from '../components/container';
+import './blog-post.css';
 
 class BlogPost extends Component {
   render() {

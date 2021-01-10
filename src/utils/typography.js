@@ -14,7 +14,7 @@ const typography = new Typography({
     "Arial",
     "sans-serif",
   ],
-  bodyFontFamily: ["Raleway", "serif"],
+  bodyFontFamily: ["Raleway", "sans-serif"],
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
     h1: {
       fontFamily: ['Raleway', 'sans-serif'].join(','),
@@ -22,7 +22,7 @@ const typography = new Typography({
     },
     h2: {
       fontFamily: ['Avenir Next', 'sans-serif'].join(','),
-      fontWeight: "100",
+      fontWeight: "400",
     },
     h6: {
       marginBottom: "0.2rem",
