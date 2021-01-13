@@ -19,7 +19,7 @@ class BlogPost extends Component {
         <Layout>
           <HalfCover title={title} blogImage={heroImage.file.url}/>
           <div style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", marginTop: "-0.5rem"}}>
-            <Container>
+            <Container size={'small'}>
               <div style={{width: "100%", overflow: "hidden"}} dangerouslySetInnerHTML={{__html: body.childMarkdownRemark.html}} />
             </Container>
 

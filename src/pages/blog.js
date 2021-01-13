@@ -46,7 +46,7 @@ export default function Blog({data}) {
             <Layout>
                 <HalfCover title={"Blog"} coverImage={data.coverImage.childImageSharp.fluid} />
                 <div style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", marginTop: "-0.5rem"}}>
-                    <Container size="small">
+                    <Container>
                         <InputWithIcon onChange={e => setSearchTerm(e.target.value)} />
                         <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
                             {results.length < 1 && <h2>Posts for {searchTerm} coming soon...</h2>}
