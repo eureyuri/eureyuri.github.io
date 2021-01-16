@@ -19,7 +19,7 @@ export default function More({ data }) {
           setTab={setTab} />
 
         <div id="about" style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", marginTop: "-0.5rem"}}>
-          <Container header={tab}>
+          <Container header={tab} size='small'>
             {tab === "Background" && (
               <Background />
             )}
