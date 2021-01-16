@@ -40,12 +40,17 @@ export default function Education() {
                         description={
                             <>
                                 <h6>Relevant Coursework</h6>
+                                <h6>- User Interface Design</h6>
+                                <h6>- Advanced Software Engineering</h6>
+                                <h6>- Introduction to Databases</h6>
+                                <h6>- Advanced Programming</h6>
+                                <h6>- Computer Networks</h6>
+                                <h6>- Computer Science Theory</h6>
+                                <h6>- Advanced Logic Design</h6>
                                 <h6>- Circuit Analysis + Lab</h6>
                                 <h6>- Signals and Systems + Lab</h6>
                                 <h6>- Electronic Circuits + Lab</h6>
                                 <h6>- Fundamentals of Computer Systems + Lab</h6>
-                                <h6>- Computer Networks</h6>
-                                <h6>- Computer Science Theory</h6>
                                 <h6>- Probability</h6>
                             </>
                         }

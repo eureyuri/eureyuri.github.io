@@ -30,6 +30,7 @@
 }
 
 .halfcover__text__links__button {
+    font-size: 1rem;
     cursor: pointer;
     width: 10rem;
     position: relative;
