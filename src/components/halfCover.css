@@ -1,5 +1,5 @@
 .halfcover {
-    height: 70vh;
+    height: 60vh;
     position: sticky;
     top: 0;
     background-color: black;
@@ -18,11 +18,7 @@
     text-align: center;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 15px;
-    padding: 10px 80px;
-}
-
-.halfcover__text__title {
-    margin-top: 2rem;
+    padding: 40px 80px;
 }
 
 .halfcover__text__links {
@@ -33,7 +29,9 @@
     width: 105%
 }
 
-.halfcover__text__link {
+.halfcover__text__links__button {
+    font-size: 1rem;
+    cursor: pointer;
     width: 10rem;
     position: relative;
     display: inline-block;
@@ -54,9 +52,15 @@
     padding: 8px 16px;
 }
 
-.halfcover__text__link:hover {
+.halfcover__text__links__button:hover {
     background-position: 0 100%;
     border-color: #0075ff;
+}
+
+.halfcover__text__links__button:focus {
+    background-position: 0 100%;
+    border-color: #0075ff;
+    outline: none;
 }
 
 .halfcover__text__link:after {
