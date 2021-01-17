@@ -5,9 +5,11 @@ import Container from "../components/container";
 import Background from "../components/More/Background";
 import Interests from "../components/More/Interests";
 import { graphql } from "gatsby"
+import { useSelector } from 'react-redux';
 
 export default function More({ data }) {
   const [tab, setTab] = useState("Background");
+  console.log(useSelector(state => state.moreTab.top))
 
   return (
     <div>
@@ -20,10 +22,10 @@ export default function More({ data }) {
 
         <div id="about" style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", marginTop: "-0.5rem"}}>
           <Container header={tab} size='small'>
-            {tab === "Background" && (
+            {useSelector(state => state.moreTab.top) === "background" && (
               <Background />
             )}
-            {tab === "Interests" && (
+            {useSelector(state => state.moreTab.top) === "interests" && (
               <Interests />
             )}
           </Container>
