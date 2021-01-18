@@ -1,8 +1,21 @@
 import React from 'react'
 import Img from "gatsby-image"
 import "./halfCover.css";
+import { useDispatch } from "react-redux"
+import { BACKGROUND, INTERESTS } from "../utils/constants"
+import { setMoreTab } from "../actions"
 
-export default function HalfCover({ coverImage, blogImage, setTab, title, subtitle }) {
+export default function HalfCover({ coverImage, blogImage, tab, title, subtitle }) {
+  const dispatch = useDispatch();
+
+  const setTab = (title) => {
+    if (title === BACKGROUND) {
+      dispatch(setMoreTab(BACKGROUND, ''));
+    } else if (title === INTERESTS) {
+      dispatch(setMoreTab(INTERESTS, ''));
+    }
+  }
+
     return (
         <div className="halfcover">
             {coverImage && (
@@ -35,15 +48,17 @@ export default function HalfCover({ coverImage, blogImage, setTab, title, subtit
             )}
             <div className="halfcover__text">
                 <h1 className="halfcover__text__title">{title}</h1>
-                <p>{subtitle}</p>
-                {setTab && (
+                { subtitle && (
+                  <p>{subtitle}</p>
+                )}
+                {tab && (
                     <div className="halfcover__text__links">
                         <button className="halfcover__text__links__button"
-                            onClick={() => setTab("Background")}
-                            onKeyDown={() => setTab("Background")}>Background</button>
+                            onClick={() => setTab(BACKGROUND)}
+                            onKeyDown={() => setTab(BACKGROUND)}>{ BACKGROUND }</button>
                         <button className="halfcover__text__links__button"
-                            onClick={() => setTab("Interests")}
-                            onKeyDown={() => setTab("Interests")}>Interests</button>
+                            onClick={() => setTab(INTERESTS)}
+                            onKeyDown={() => setTab(INTERESTS)}>{ INTERESTS }</button>
                     </div>
                 )}
             </div>

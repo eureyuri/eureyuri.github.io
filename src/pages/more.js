@@ -9,8 +9,7 @@ import { useSelector } from 'react-redux';
 import { BACKGROUND, INTERESTS } from "../utils/constants"
 
 export default function More({ data }) {
-  const [tab, setTab] = useState(BACKGROUND);
-  console.log(useSelector(state => state.moreTab.top))
+  const tab = useSelector(state => state.moreTab.top);
 
   return (
     <div>
@@ -19,14 +18,14 @@ export default function More({ data }) {
           title={"More About Eurey"}
           subtitle={"Space for showcasing my creative side"}
           coverImage={data.coverImage.childImageSharp.fluid}
-          setTab={setTab} />
+          tab={true} />
 
         <div id="about" style={{background: "white", display: "flex", flexDirection:"column", justifyContent: "center", zIndex: "2", position: "relative", marginTop: "-0.5rem"}}>
           <Container header={tab} size='small'>
-            {useSelector(state => state.moreTab.top) === BACKGROUND && (
+            {tab === BACKGROUND && (
               <Background />
             )}
-            {useSelector(state => state.moreTab.top) === INTERESTS && (
+            {tab === INTERESTS && (
               <Interests />
             )}
           </Container>

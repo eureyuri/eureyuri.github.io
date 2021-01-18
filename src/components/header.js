@@ -69,7 +69,6 @@ function Header() {
     if (title === MORE) {
       dispatch(setMoreTab(BACKGROUND, ''));
     } else if (title === INTERESTS) {
-      console.log(title);
       dispatch(setMoreTab(INTERESTS, ''));
     }
   }
@@ -85,7 +84,9 @@ function Header() {
       )
     } else {
       return (
-        <div onClick={() => setTab(title)} onKeyDown={() => setTab(title)} role="presentation">
+        <div onClick={() => setTab(title)}
+             onKeyDown={() => setTab(title)}
+             role="presentation">
           <Link to={link}>
             <ListItem button key={title} className={classes.drawerButton}>
               <ListItemText primary={title} className={classes.drawerContent} />
