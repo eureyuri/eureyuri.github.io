@@ -15,9 +15,7 @@ import logo from "../images/logo.png";
 import { setMoreTab } from "../actions"
 import { useDispatch } from 'react-redux';
 import { connect } from "react-redux";
-
-const MORE = 'More About Me';
-const INTERESTS = 'Interests';
+import { MORE, INTERESTS, BACKGROUND } from '../utils/constants';
 
 
 const AnchorListLink = ({link, title, className}) => (
@@ -69,9 +67,10 @@ function Header() {
 
   const setTab = (title) => {
     if (title === MORE) {
-      dispatch(setMoreTab('background', ''));
+      dispatch(setMoreTab(BACKGROUND, ''));
     } else if (title === INTERESTS) {
-      dispatch(setMoreTab('interests', ''));
+      console.log(title);
+      dispatch(setMoreTab(INTERESTS, ''));
     }
   }
 
