@@ -16,6 +16,7 @@ import CustomizedTimeline from "../components/CustomizedTimeline";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+
 export default function Home({ data }) {
   const [tabIndex, setTabIndex] = useState(0);
 

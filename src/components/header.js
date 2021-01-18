@@ -12,6 +12,10 @@ import IconButton from '@material-ui/core/IconButton';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import MenuIcon from '@material-ui/icons/Menu';
 import logo from "../images/logo.png";
+import { setMoreTab } from "../actions"
+import { useDispatch } from 'react-redux';
+import { connect } from "react-redux";
+import { MORE, INTERESTS, BACKGROUND } from '../utils/constants';
 
 
 const AnchorListLink = ({link, title, className}) => (
@@ -56,9 +60,18 @@ const useStyles = makeStyles({
   }
 });
 
-export default function Header() {
+function Header() {
   const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
+  const dispatch = useDispatch();
+
+  const setTab = (title) => {
+    if (title === MORE) {
+      dispatch(setMoreTab(BACKGROUND, ''));
+    } else if (title === INTERESTS) {
+      dispatch(setMoreTab(INTERESTS, ''));
+    }
+  }
 
   const ListLink = ({link, title, className}) => {
     if (className) {
@@ -71,11 +84,15 @@ export default function Header() {
       )
     } else {
       return (
-        <Link to={link}>
-          <ListItem button key={title} className={classes.drawerButton}>
-            <ListItemText primary={title} className={classes.drawerContent} />
-          </ListItem>
-        </Link>
+        <div onClick={() => setTab(title)}
+             onKeyDown={() => setTab(title)}
+             role="presentation">
+          <Link to={link}>
+            <ListItem button key={title} className={classes.drawerButton}>
+              <ListItemText primary={title} className={classes.drawerContent} />
+            </ListItem>
+          </Link>
+        </div>
       )
     }
   }
@@ -95,8 +112,8 @@ export default function Header() {
         <ListLink link="projects" title="Projects" className={{nav:  "header__nav__mobile", li: "hamburger__item__mobile" }} />
         <ListLink link="contact" title="Contact" className={{nav:  "header__nav__mobile", li: "hamburger__item__mobile" }} />
 
-        <ListLink link={"/more/"} title={"More About Me"} />
-        <ListLink link={"/more/"} title={"Interests"} />
+        <ListLink link={"/more/"} title={MORE} />
+        <ListLink link={"/more/"} title={INTERESTS} />
         <ListLink link={"/blog/"} title={"Blog"} />
         <a href="https://drive.google.com/file/d/1_TtgR3HEABau-rBxm2rdvUe7dTN5yFeT/view?usp=sharing" target="_blank" rel="noreferrer nofollow">
           <ListItem button key={'Resume'} className={classes.drawerButton}>
@@ -170,3 +187,8 @@ export default function Header() {
     </div>
   )
 }
+
+export default connect(
+  null,
+  { setMoreTab }
+)(Header);
