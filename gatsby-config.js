@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     title: "Eurey Noguchi",
     description: "Personal website for Eurey (Yuri) Noguchi",
-
+    siteUrl: `https://www.eureyuri.codes`,
   },
   plugins: [
     `gatsby-theme-material-ui`,
@@ -18,6 +18,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
