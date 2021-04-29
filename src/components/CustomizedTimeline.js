@@ -51,6 +51,12 @@ export default function CustomizedTimeline() {
   return (
     <Timeline align="alternate" style={{marginLeft: "0"}}>
       <TimelineElement
+        year="2021 - 2022"
+        color="#B9D9EB"
+        title="Columbia University"
+        description="M.S. Computer Science"
+        icon={<SchoolIcon/>} />
+      <TimelineElement
         year="2019 - 2021"
         color="#B9D9EB"
         title="Columbia University"

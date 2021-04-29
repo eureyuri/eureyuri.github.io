@@ -49,7 +49,8 @@ export default function Home({ data }) {
               </div>
               <div className="index__right">
                 <p className="index__text index__text__first">
-                  I am a senior at Columbia University majoring in Computer Engineering seeking opportunities to work in the U.S.
+                  I am a first year master student at Columbia University majoring in Computer Science (Vision, Graphics, Interaction, and Robotics track) seeking opportunities to work in the U.S.
+                  For undergrad, I majored in Computer Engineering and Computer Science.
                 </p>
                 <p className="index__text">
                   I am a full stack developer with a passion for <span className="highlight">web development</span> and <span className="highlight">design</span>. Recently, I have been working on the front-end with React.
