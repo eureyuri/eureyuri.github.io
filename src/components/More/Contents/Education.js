@@ -42,7 +42,10 @@ export default function Education() {
                                 <h6>Relevant Coursework</h6>
                                 <h6>- User Interface Design</h6>
                                 <h6>- Advanced Software Engineering</h6>
+                                <h6>- Developing Accessible User Interfaces</h6>
                                 <h6>- Introduction to Databases</h6>
+                                <h6>- IoT - Intelligent and Connected Systems</h6>
+                                <h6>- Programming Language and Translators</h6>
                                 <h6>- Advanced Programming</h6>
                                 <h6>- Computer Networks</h6>
                                 <h6>- Computer Science Theory</h6>

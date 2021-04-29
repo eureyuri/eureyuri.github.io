@@ -34,13 +34,17 @@ export default function Tools() {
     return (
         <div className="tooltips">
             <LanguageTooltip
+                language="JavaScript"
+                frameworks={["React", "Redux", "Gatsby", "Node", "Express"]} />
+            <LanguageTooltip
                 language="Python"
                 frameworks={["Flask", "Keras", "Requests", "OpenCV", "Pandas", "Matplotlib", "Numpy", "and more..."]} />
             <LanguageTooltip
-                language="JavaScript"
-                frameworks={["React", "Redux", "Gatsby", "Node", "Express"]} />
-            <LanguageButton language="Java" />
+                language="Java"
+                frameworks={["Javalin", "JUnit", "Android"]} />
             <LanguageButton language="GraphQL" />
+            <LanguageButton language="micropython" />
+            <LanguageButton language="OCaml" />
             <LanguageButton language="PostgreSQL" />
             <LanguageButton language="HTML5" />
             <LanguageButton language="CSS3" />
