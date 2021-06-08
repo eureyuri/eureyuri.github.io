@@ -1,1 +1,0 @@
-export const SET_MORE_TAB = 'SET_MORE_TAB';
