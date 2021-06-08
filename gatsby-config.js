@@ -11,6 +11,7 @@ module.exports = {
     description: "Personal website for Eurey (Yuri) Noguchi",
     siteUrl: `https://www.eureyuri.codes`,
   },
+  pathPrefix: `/`,
   plugins: [
     `gatsby-theme-material-ui`,
     `gatsby-plugin-anchor-links`,
